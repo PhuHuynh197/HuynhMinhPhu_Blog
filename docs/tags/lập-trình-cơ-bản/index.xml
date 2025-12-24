@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Lập Trình Cơ Bản on Huỳnh Minh Phú</title>
+    <link>http://localhost:1313/HuynhMinhPhu_Blog/tags/l%E1%BA%ADp-tr%C3%ACnh-c%C6%A1-b%E1%BA%A3n/</link>
+    <description>Recent content in Lập Trình Cơ Bản on Huỳnh Minh Phú</description>
+    <generator>Hugo -- 0.153.2</generator>
+    <language>vi</language>
+    <lastBuildDate>Wed, 24 Dec 2025 08:00:00 +0700</lastBuildDate>
+    <atom:link href="http://localhost:1313/HuynhMinhPhu_Blog/tags/l%E1%BA%ADp-tr%C3%ACnh-c%C6%A1-b%E1%BA%A3n/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cấu trúc điều khiển trong Java và JavaScript</title>
+      <link>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-1/</link>
+      <pubDate>Wed, 24 Dec 2025 08:00:00 +0700</pubDate>
+      <guid>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-1/</guid>
+      <description>&lt;p&gt;Hướng dẫn chi tiết về cấu trúc điều khiển (&lt;code&gt;if-else&lt;/code&gt;, &lt;code&gt;switch&lt;/code&gt;) và vòng lặp (&lt;code&gt;for&lt;/code&gt;, &lt;code&gt;while&lt;/code&gt;) trong lập trình Java.&lt;/p&gt;
+&lt;h3 id=&#34;ví-dụ-về-vòng-lặp-for-trong-java&#34;&gt;Ví dụ về vòng lặp For trong Java:&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Main&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;(String&lt;span style=&#34;color:#f92672&#34;&gt;[]&lt;/span&gt; args) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; i &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; 1; i &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;=&lt;/span&gt; 5; i&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            System.&lt;span style=&#34;color:#a6e22e&#34;&gt;out&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;println&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Lần lặp thứ: &amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; i);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+  </channel>
+</rss>

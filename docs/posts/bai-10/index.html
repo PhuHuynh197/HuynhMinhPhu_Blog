@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="light">
+
+<head><script src="/HuynhMinhPhu_Blog/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=HuynhMinhPhu_Blog/livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Tổng hợp mô hình Client – Server trong lập trình mạng Java | Huỳnh Minh Phú</title>
+<meta name="keywords" content="Java, Network, ClientServer">
+<meta name="description" content="Mô hình Client – Server là mô hình nền tảng trong lập trình mạng.
+Toàn bộ các bài thực hành trong môn Lập trình mạng Java
+đều xoay quanh mô hình này với hai giao thức chính là TCP và UDP.
+
+1. Tổng quan mô hình Client – Server
+
+Client: khởi tạo kết nối và gửi yêu cầu
+Server: chờ kết nối, xử lý yêu cầu và phản hồi
+Hai bên giao tiếp thông qua mạng máy tính
+
+
+2. Mô hình TCP Client – Server
+TCP Client
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.net.Socket;
+
+public class TCPClient {
+    public static void main(String[] args) {
+        try {
+            Socket socket = new Socket(&#34;localhost&#34;, 1234);
+
+            DataOutputStream dos =
+                new DataOutputStream(socket.getOutputStream());
+            DataInputStream dis =
+                new DataInputStream(socket.getInputStream());
+
+            dos.writeUTF(&#34;Hello Server&#34;);
+            String response = dis.readUTF();
+
+            System.out.println(&#34;Server tra ve: &#34; &#43; response);
+
+            socket.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+4. Luồng xử lý UDP Client – Server
+// UDP Client
+DatagramSocket clientSocket = new DatagramSocket();
+
+// UDP Server
+DatagramSocket serverSocket = new DatagramSocket(9876);
+
+5. Tổng kết bài học
+
+
+InetAddress dùng để xử lý địa chỉ IP">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-10/">
+<link crossorigin="anonymous" href="/HuynhMinhPhu_Blog/assets/css/stylesheet.fd5566c526ae48aadabd950798a2dc3568536401560eae5caac3765a42a9e7b5.css" integrity="sha256-/VVmxSauSKravZUHmKLcNWhTZAFWDq5cqsN2WkKp57U=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/HuynhMinhPhu_Blog/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/HuynhMinhPhu_Blog/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/HuynhMinhPhu_Blog/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/HuynhMinhPhu_Blog/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/HuynhMinhPhu_Blog/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-10/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    }
+
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/HuynhMinhPhu_Blog/" accesskey="h" title="Huỳnh Minh Phú (Alt + H)">Huỳnh Minh Phú</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/HuynhMinhPhu_Blog/" title="Trang Chủ">
+                    <span>Trang Chủ</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/HuynhMinhPhu_Blog/posts" title="Bài Viết">
+                    <span>Bài Viết</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/HuynhMinhPhu_Blog/about" title="Giới Thiệu">
+                    <span>Giới Thiệu</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/HuynhMinhPhu_Blog/posts" title="Liên Hệ">
+                    <span>Liên Hệ</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/HuynhMinhPhu_Blog/posts" title="CV">
+                    <span>CV</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<header class="main-header">
+    <div class="header-container">
+        <a href="/HuynhMinhPhu_Blog/" class="logo">
+            <span class="logo-icon">🚀</span> PHU.<span>DEV</span>
+        </a>
+        <nav class="nav-menu">
+            <a href="/HuynhMinhPhu_Blog/" class="nav-link">Trang Chủ</a>
+            <a href="/HuynhMinhPhu_Blog/posts" class="nav-link">Bài Viết</a>
+            <a href="/HuynhMinhPhu_Blog/about" class="nav-link">Giới Thiệu</a>
+            <a href="/HuynhMinhPhu_Blog/posts" class="nav-link">Liên Hệ</a>
+            <a href="/HuynhMinhPhu_Blog/posts" class="nav-link">CV</a>
+        </nav>
+        <div class="header-cta">
+            <a href="https://github.com/PhuHuynh197" target="_blank" class="git-btn">GitHub</a>
+        </div>
+    </div>
+</header>
+
+<style>
+     
+    html, body { margin: 0; padding: 0; overflow-x: hidden; width: 100%; background-color: #ffffff; color: #1e293b; }
+    :root {
+        --primary: #0284c7;
+        --dark: #1e293b;
+        --footer-bg: #0f172a;
+        --transition: all 0.3s ease;
+    }
+
+     
+    .main-header {
+        position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+        background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(15px);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    .header-container { max-width: 1200px; margin: 0 auto; padding: 12px 25px; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 1.5rem; font-weight: 900; text-decoration: none; color: var(--dark); letter-spacing: -1px; }
+    .logo span { color: var(--primary); }
+    .nav-menu { display: flex; gap: 25px; }
+    .nav-link { color: #64748b; text-decoration: none; font-weight: 600; font-size: 0.95rem; }
+    .git-btn { background: var(--dark); color: #fff; padding: 8px 20px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 0.85rem; }
+
+     
+    .post-wrapper { max-width: 800px; margin: 150px auto 100px; padding: 0 25px; }
+    .post-header { text-align: center; margin-bottom: 50px; }
+    .post-tag { color: var(--primary); font-weight: 800; font-size: 0.9rem; text-transform: uppercase; margin-bottom: 15px; display: block; }
+    .post-title { font-size: 3rem; font-weight: 900; color: var(--dark); line-height: 1.2; margin-bottom: 20px; }
+    .post-meta { color: #94a3b8; font-size: 0.95rem; }
+
+     
+    .post-content { line-height: 1.8; font-size: 1.15rem; color: #334155; }
+    .post-content h2 { font-size: 1.8rem; font-weight: 800; color: var(--dark); margin: 40px 0 20px; }
+    .post-content h3 { font-size: 1.4rem; font-weight: 700; color: var(--dark); margin: 30px 0 15px; }
+    .post-content p { margin-bottom: 20px; }
+    
+     
+    .post-content pre {
+        background: #1e293b; color: #f8fafc; padding: 20px; border-radius: 12px;
+        overflow-x: auto; margin: 30px 0; box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    .post-content code { font-family: 'Fira Code', monospace; font-size: 0.95rem; }
+
+     
+    .site-footer {
+        background-color: var(--footer-bg); color: #cbd5e1; padding: 80px 0 0; margin-top: 100px;
+        width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw;
+    }
+    .footer-container { max-width: 1200px; margin: 0 auto; padding: 0 25px 60px; display: flex; justify-content: space-between; gap: 60px; }
+    .footer-brand { flex: 2; }
+    .footer-logo { font-size: 1.8rem; font-weight: 900; color: #fff; margin-bottom: 20px; }
+    .footer-logo span { color: var(--primary); }
+    .footer-contact { flex: 1.5; text-align: right; }
+    .footer-bottom { background: rgba(0,0,0,0.2); padding: 30px 0; text-align: center; color: #64748b; font-size: 0.85rem; width: 100%; }
+
+    .footer { display: none !important; }
+</style>
+
+<article class="post-wrapper">
+    <header class="post-header">
+        <span class="post-tag">Java</span>
+        <h1 class="post-title">Tổng hợp mô hình Client – Server trong lập trình mạng Java</h1>
+        <div class="post-meta">
+            <span>📅 24/12/2025</span> • 
+            <span>⏱️ 2 phút đọc</span>
+        </div>
+    </header>
+
+    <div class="post-content">
+        <p>Mô hình Client – Server là mô hình nền tảng trong lập trình mạng.
+Toàn bộ các bài thực hành trong môn Lập trình mạng Java
+đều xoay quanh mô hình này với hai giao thức chính là TCP và UDP.</p>
+<hr>
+<h2 id="1-tổng-quan-mô-hình-client--server">1. Tổng quan mô hình Client – Server</h2>
+<ul>
+<li><strong>Client</strong>: khởi tạo kết nối và gửi yêu cầu</li>
+<li><strong>Server</strong>: chờ kết nối, xử lý yêu cầu và phản hồi</li>
+<li>Hai bên giao tiếp thông qua mạng máy tính</li>
+</ul>
+<hr>
+<h2 id="2-mô-hình-tcp-client--server">2. Mô hình TCP Client – Server</h2>
+<h3 id="tcp-client">TCP Client</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.io.DataInputStream;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.io.DataOutputStream;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.net.Socket;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TCPClient</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>            Socket socket <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Socket(<span style="color:#e6db74">&#34;localhost&#34;</span>, 1234);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            DataOutputStream dos <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">new</span> DataOutputStream(socket.<span style="color:#a6e22e">getOutputStream</span>());
+</span></span><span style="display:flex;"><span>            DataInputStream dis <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">new</span> DataInputStream(socket.<span style="color:#a6e22e">getInputStream</span>());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            dos.<span style="color:#a6e22e">writeUTF</span>(<span style="color:#e6db74">&#34;Hello Server&#34;</span>);
+</span></span><span style="display:flex;"><span>            String response <span style="color:#f92672">=</span> dis.<span style="color:#a6e22e">readUTF</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Server tra ve: &#34;</span> <span style="color:#f92672">+</span> response);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            socket.<span style="color:#a6e22e">close</span>();
+</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">catch</span> (Exception e) {
+</span></span><span style="display:flex;"><span>            e.<span style="color:#a6e22e">printStackTrace</span>();
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><hr>
+<h2 id="4-luồng-xử-lý-udp-client--server">4. Luồng xử lý UDP Client – Server</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// UDP Client</span>
+</span></span><span style="display:flex;"><span>DatagramSocket clientSocket <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> DatagramSocket();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// UDP Server</span>
+</span></span><span style="display:flex;"><span>DatagramSocket serverSocket <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> DatagramSocket(9876);
+</span></span></code></pre></div><hr>
+<h2 id="5-tổng-kết-bài-học">5. Tổng kết bài học</h2>
+<ul>
+<li>
+<p><code>InetAddress</code> dùng để xử lý địa chỉ IP</p>
+</li>
+<li>
+<p>File dùng để lưu và đọc dữ liệu</p>
+</li>
+<li>
+<p>Thread dùng để xử lý song song</p>
+</li>
+<li>
+<p>TCP đảm bảo độ tin cậy</p>
+</li>
+<li>
+<p>UDP đảm bảo tốc độ</p>
+</li>
+</ul>
+<p>Toàn bộ các nội dung trên là kiến thức cốt lõi
+trong các bài thực hành lập trình mạng Java.</p>
+
+    </div>
+    
+    <div style="margin-top: 80px; text-align: center;">
+        <a href="/HuynhMinhPhu_Blog/posts" style="color: var(--primary); font-weight: 800; text-decoration: none; font-size: 1.1rem;">← Quay lại danh sách bài viết</a>
+    </div>
+</article>
+
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-brand">
+            <h3 class="footer-logo">Huỳnh Minh <span>Phú</span></h3>
+            <p>Chia sẻ kiến thức về lập trình Java và JavaScript. Đồ án môn Lập trình mạng - HUTECH.</p>
+        </div>
+        <div class="footer-contact">
+            <h4 style="color:#fff; margin-bottom:20px; font-weight:800;">Liên hệ</h4>
+            <p>📧 huynhminhphu197@gmail.com</p>
+            <p>📍 TP. Hồ Chí Minh, Việt Nam</p>
+            <div style="margin-top:15px;">
+                <a href="https://github.com/PhuHuynh197" style="color:#fff; text-decoration:none; background:#333; padding:8px 15px; border-radius:8px; font-size:0.8rem; font-weight:700;">GitHub</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2025 Huỳnh Minh Phú - Đồ án Lập trình mạng - Powered by Hugo</p>
+    </div>
+</footer>
+
+
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/HuynhMinhPhu_Blog/">Huỳnh Minh Phú</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

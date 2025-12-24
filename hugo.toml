@@ -1,0 +1,37 @@
+baseURL = 'https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/'
+publishDir = 'docs'
+languageCode = 'vi'
+title = 'Huỳnh Minh Phú'
+theme = "PaperMod"
+
+[params]
+  defaultTheme = "light"
+  ShowReadingTime = true
+  ShowShareButtons = true
+
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "Trang Chủ"
+    url = "/"
+    weight = 10
+  [[menu.main]]
+    identifier = "posts"
+    name = "Bài Viết"
+    url = "posts"
+    weight = 20
+  [[menu.main]]
+    identifier = "about"
+    name = "Giới Thiệu"
+    url = "about"
+    weight = 30
+  [[menu.main]]
+    identifier = "contact"
+    name = "Liên Hệ"
+    url = "posts"
+    weight = 40
+  [[menu.main]]
+    identifier = "cv"
+    name = "CV"
+    url = "posts"
+    weight = 50

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Network on Huỳnh Minh Phú</title>
+    <link>http://localhost:1313/HuynhMinhPhu_Blog/tags/network/</link>
+    <description>Recent content in Network on Huỳnh Minh Phú</description>
+    <generator>Hugo -- 0.153.2</generator>
+    <language>vi</language>
+    <lastBuildDate>Wed, 24 Dec 2025 08:00:00 +0700</lastBuildDate>
+    <atom:link href="http://localhost:1313/HuynhMinhPhu_Blog/tags/network/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Quản lý địa chỉ IP với lớp InetAddress</title>
+      <link>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-1/</link>
+      <pubDate>Wed, 24 Dec 2025 08:00:00 +0700</pubDate>
+      <guid>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-1/</guid>
+      <description>&lt;p&gt;Trong lập trình mạng Java, lớp &lt;code&gt;InetAddress&lt;/code&gt; thuộc gói &lt;code&gt;java.net&lt;/code&gt; dùng để quản lý địa chỉ IP (IPv4/IPv6) và tên miền.&lt;/p&gt;
+&lt;h3 id=&#34;ví-dụ-lấy-địa-chỉ-ip-của-một-website&#34;&gt;Ví dụ lấy địa chỉ IP của một website:&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;InetAddress address &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; InetAddress.&lt;span style=&#34;color:#a6e22e&#34;&gt;getByName&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;www.hutech.edu.vn&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;System.&lt;span style=&#34;color:#a6e22e&#34;&gt;out&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;println&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Địa chỉ IP: &amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; address.&lt;span style=&#34;color:#a6e22e&#34;&gt;getHostAddress&lt;/span&gt;());
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+  </channel>
+</rss>

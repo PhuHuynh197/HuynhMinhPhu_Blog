@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Posts on Huỳnh Minh Phú</title>
+    <link>http://localhost:1313/HuynhMinhPhu_Blog/posts/</link>
+    <description>Recent content in Posts on Huỳnh Minh Phú</description>
+    <generator>Hugo -- 0.153.2</generator>
+    <language>vi</language>
+    <lastBuildDate>Wed, 24 Dec 2025 10:20:00 +0700</lastBuildDate>
+    <atom:link href="http://localhost:1313/HuynhMinhPhu_Blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tổng hợp mô hình Client – Server trong lập trình mạng Java</title>
+      <link>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-10/</link>
+      <pubDate>Wed, 24 Dec 2025 10:20:00 +0700</pubDate>
+      <guid>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-10/</guid>
+      <description>&lt;p&gt;Mô hình Client – Server là mô hình nền tảng trong lập trình mạng.
+Toàn bộ các bài thực hành trong môn Lập trình mạng Java
+đều xoay quanh mô hình này với hai giao thức chính là TCP và UDP.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;1-tổng-quan-mô-hình-client--server&#34;&gt;1. Tổng quan mô hình Client – Server&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Client&lt;/strong&gt;: khởi tạo kết nối và gửi yêu cầu&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Server&lt;/strong&gt;: chờ kết nối, xử lý yêu cầu và phản hồi&lt;/li&gt;
+&lt;li&gt;Hai bên giao tiếp thông qua mạng máy tính&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;2-mô-hình-tcp-client--server&#34;&gt;2. Mô hình TCP Client – Server&lt;/h2&gt;
+&lt;h3 id=&#34;tcp-client&#34;&gt;TCP Client&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; java.io.DataInputStream;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; java.io.DataOutputStream;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; java.net.Socket;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;TCPClient&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;(String&lt;span style=&#34;color:#f92672&#34;&gt;[]&lt;/span&gt; args) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;try&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            Socket socket &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Socket(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;localhost&amp;#34;&lt;/span&gt;, 1234);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            DataOutputStream dos &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; DataOutputStream(socket.&lt;span style=&#34;color:#a6e22e&#34;&gt;getOutputStream&lt;/span&gt;());
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            DataInputStream dis &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; DataInputStream(socket.&lt;span style=&#34;color:#a6e22e&#34;&gt;getInputStream&lt;/span&gt;());
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            dos.&lt;span style=&#34;color:#a6e22e&#34;&gt;writeUTF&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hello Server&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            String response &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; dis.&lt;span style=&#34;color:#a6e22e&#34;&gt;readUTF&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            System.&lt;span style=&#34;color:#a6e22e&#34;&gt;out&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;println&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Server tra ve: &amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; response);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            socket.&lt;span style=&#34;color:#a6e22e&#34;&gt;close&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        } &lt;span style=&#34;color:#66d9ef&#34;&gt;catch&lt;/span&gt; (Exception e) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            e.&lt;span style=&#34;color:#a6e22e&#34;&gt;printStackTrace&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id=&#34;4-luồng-xử-lý-udp-client--server&#34;&gt;4. Luồng xử lý UDP Client – Server&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// UDP Client&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;DatagramSocket clientSocket &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; DatagramSocket();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// UDP Server&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;DatagramSocket serverSocket &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; DatagramSocket(9876);
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id=&#34;5-tổng-kết-bài-học&#34;&gt;5. Tổng kết bài học&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;InetAddress&lt;/code&gt; dùng để xử lý địa chỉ IP&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Lập trình UDP với Datagram trong Java</title>
+      <link>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-8/</link>
+      <pubDate>Wed, 24 Dec 2025 10:00:00 +0700</pubDate>
+      <guid>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-8/</guid>
+      <description>&lt;p&gt;Trong lập trình mạng, UDP (User Datagram Protocol) là giao thức truyền dữ liệu
+không kết nối. UDP không đảm bảo độ tin cậy nhưng có tốc độ truyền nhanh.
+Java hỗ trợ UDP thông qua các lớp &lt;code&gt;DatagramSocket&lt;/code&gt; và &lt;code&gt;DatagramPacket&lt;/code&gt;
+trong gói &lt;code&gt;java.net&lt;/code&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;1-đặc-điểm-của-udp&#34;&gt;1. Đặc điểm của UDP&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Không cần thiết lập kết nối trước khi truyền dữ liệu&lt;/li&gt;
+&lt;li&gt;Dữ liệu được gửi dưới dạng các gói tin (datagram)&lt;/li&gt;
+&lt;li&gt;Không đảm bảo thứ tự và độ tin cậy&lt;/li&gt;
+&lt;li&gt;Phù hợp cho các bài thực hành so sánh với TCP&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;2-udp-client-gửi-dữ-liệu&#34;&gt;2. UDP Client gửi dữ liệu&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; java.net.DatagramPacket;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; java.net.DatagramSocket;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; java.net.InetAddress;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;UDPClient&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;(String&lt;span style=&#34;color:#f92672&#34;&gt;[]&lt;/span&gt; args) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;try&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#75715e&#34;&gt;// Tạo socket UDP phía client&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            DatagramSocket socket &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; DatagramSocket();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#75715e&#34;&gt;// Dữ liệu cần gửi&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            String message &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hello UDP Server&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;byte&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[]&lt;/span&gt; data &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; message.&lt;span style=&#34;color:#a6e22e&#34;&gt;getBytes&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#75715e&#34;&gt;// Địa chỉ IP server&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            InetAddress serverAddress &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; InetAddress.&lt;span style=&#34;color:#a6e22e&#34;&gt;getByName&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;localhost&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#75715e&#34;&gt;// Tạo gói tin gửi đi&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            DatagramPacket packet &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; DatagramPacket(data, data.&lt;span style=&#34;color:#a6e22e&#34;&gt;length&lt;/span&gt;, serverAddress, 9876);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#75715e&#34;&gt;// Gửi gói tin&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            socket.&lt;span style=&#34;color:#a6e22e&#34;&gt;send&lt;/span&gt;(packet);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#75715e&#34;&gt;// Đóng socket&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            socket.&lt;span style=&#34;color:#a6e22e&#34;&gt;close&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        } &lt;span style=&#34;color:#66d9ef&#34;&gt;catch&lt;/span&gt; (Exception e) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            e.&lt;span style=&#34;color:#a6e22e&#34;&gt;printStackTrace&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id=&#34;3-udp-server-nhận-dữ-liệu&#34;&gt;3. UDP Server nhận dữ liệu&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; java.net.DatagramPacket;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; java.net.DatagramSocket;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;UDPServer&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;(String&lt;span style=&#34;color:#f92672&#34;&gt;[]&lt;/span&gt; args) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;try&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            DatagramSocket socket &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; DatagramSocket(9876);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;byte&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[]&lt;/span&gt; buffer &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;byte&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;1024&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            DatagramPacket packet &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; DatagramPacket(buffer, buffer.&lt;span style=&#34;color:#a6e22e&#34;&gt;length&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            socket.&lt;span style=&#34;color:#a6e22e&#34;&gt;receive&lt;/span&gt;(packet);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            String message &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; String(packet.&lt;span style=&#34;color:#a6e22e&#34;&gt;getData&lt;/span&gt;(), 0, packet.&lt;span style=&#34;color:#a6e22e&#34;&gt;getLength&lt;/span&gt;());
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            System.&lt;span style=&#34;color:#a6e22e&#34;&gt;out&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;println&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Nhan duoc: &amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; message);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            socket.&lt;span style=&#34;color:#a6e22e&#34;&gt;close&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        } &lt;span style=&#34;color:#66d9ef&#34;&gt;catch&lt;/span&gt; (Exception e) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            e.&lt;span style=&#34;color:#a6e22e&#34;&gt;printStackTrace&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id=&#34;4-nhận-xét&#34;&gt;4. Nhận xét&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;UDP Client gửi dữ liệu mà không cần chờ phản hồi&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Lập trình TCP Client và TCP Server trong Java</title>
+      <link>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-7/</link>
+      <pubDate>Wed, 24 Dec 2025 09:30:00 +0700</pubDate>
+      <guid>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-7/</guid>
+      <description>&lt;p&gt;Trong mô hình lập trình mạng TCP, &lt;strong&gt;Client&lt;/strong&gt; là phía khởi tạo kết nối đến Server.
+Client sử dụng lớp &lt;code&gt;Socket&lt;/code&gt; để kết nối đến địa chỉ IP và cổng (port) của Server.
+Dưới đây là các khái niệm.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;1-khái-niệm-tcp-client&#34;&gt;1. Khái niệm TCP Client&lt;/h2&gt;
+&lt;p&gt;TCP Client chịu trách nhiệm:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Kết nối đến TCP Server&lt;/li&gt;
+&lt;li&gt;Gửi dữ liệu đến Server&lt;/li&gt;
+&lt;li&gt;Nhận dữ liệu phản hồi từ Server&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Trong Java, TCP Client được xây dựng dựa trên lớp &lt;code&gt;Socket&lt;/code&gt;
+thuộc gói &lt;code&gt;java.net&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Truyền file giữa Client và Server trong Java</title>
+      <link>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-9/</link>
+      <pubDate>Wed, 24 Dec 2025 09:20:00 +0700</pubDate>
+      <guid>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-9/</guid>
+      <description>&lt;p&gt;Ứng dụng truyền file là một trong những bài thực hành quan trọng
+trong môn Lập trình mạng Java.
+Bài thực hành này giúp hiểu rõ cách sử dụng Socket để truyền dữ liệu
+dưới dạng file giữa Client và Server.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;1-mô-hình-truyền-file-client--server&#34;&gt;1. Mô hình truyền file Client – Server&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Client&lt;/strong&gt;: đọc dữ liệu từ file và gửi qua mạng&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Server&lt;/strong&gt;: nhận dữ liệu từ Client và ghi ra file&lt;/li&gt;
+&lt;li&gt;Dữ liệu được truyền theo từng khối byte&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;2-chương-trình-client-gửi-file&#34;&gt;2. Chương trình Client gửi file&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; java.io.FileInputStream;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; java.io.OutputStream;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; java.net.Socket;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;SendFileClient&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;(String&lt;span style=&#34;color:#f92672&#34;&gt;[]&lt;/span&gt; args) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;try&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#75715e&#34;&gt;// Kết nối đến Server&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            Socket socket &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Socket(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;localhost&amp;#34;&lt;/span&gt;, 1234);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#75715e&#34;&gt;// Mở file cần gửi&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            FileInputStream fis &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; FileInputStream(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;test.txt&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#75715e&#34;&gt;// Lấy luồng gửi dữ liệu&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            OutputStream os &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                socket.&lt;span style=&#34;color:#a6e22e&#34;&gt;getOutputStream&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;byte&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[]&lt;/span&gt; buffer &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;byte&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;1024&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; count;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#75715e&#34;&gt;// Đọc file và gửi từng khối dữ liệu&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;while&lt;/span&gt; ((count &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; fis.&lt;span style=&#34;color:#a6e22e&#34;&gt;read&lt;/span&gt;(buffer)) &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; 0) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                os.&lt;span style=&#34;color:#a6e22e&#34;&gt;write&lt;/span&gt;(buffer, 0, count);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            fis.&lt;span style=&#34;color:#a6e22e&#34;&gt;close&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            socket.&lt;span style=&#34;color:#a6e22e&#34;&gt;close&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        } &lt;span style=&#34;color:#66d9ef&#34;&gt;catch&lt;/span&gt; (Exception e) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            e.&lt;span style=&#34;color:#a6e22e&#34;&gt;printStackTrace&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id=&#34;3-chương-trình-server-nhận-file&#34;&gt;3. Chương trình Server nhận file&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; java.io.FileOutputStream;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; java.io.InputStream;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; java.net.ServerSocket;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; java.net.Socket;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ReceiveFileServer&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;(String&lt;span style=&#34;color:#f92672&#34;&gt;[]&lt;/span&gt; args) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;try&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#75715e&#34;&gt;// Tạo ServerSocket lắng nghe tại cổng 1234&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            ServerSocket server &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; ServerSocket(1234);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#75715e&#34;&gt;// Chờ Client kết nối&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            Socket socket &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; server.&lt;span style=&#34;color:#a6e22e&#34;&gt;accept&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#75715e&#34;&gt;// Lấy luồng nhận dữ liệu&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            InputStream is &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                socket.&lt;span style=&#34;color:#a6e22e&#34;&gt;getInputStream&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#75715e&#34;&gt;// Tạo file để ghi dữ liệu nhận được&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            FileOutputStream fos &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; FileOutputStream(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;receive.txt&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;byte&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[]&lt;/span&gt; buffer &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;byte&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;1024&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; count;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#75715e&#34;&gt;// Nhận dữ liệu và ghi ra file&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;while&lt;/span&gt; ((count &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; is.&lt;span style=&#34;color:#a6e22e&#34;&gt;read&lt;/span&gt;(buffer)) &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; 0) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                fos.&lt;span style=&#34;color:#a6e22e&#34;&gt;write&lt;/span&gt;(buffer, 0, count);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            fos.&lt;span style=&#34;color:#a6e22e&#34;&gt;close&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            socket.&lt;span style=&#34;color:#a6e22e&#34;&gt;close&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            server.&lt;span style=&#34;color:#a6e22e&#34;&gt;close&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        } &lt;span style=&#34;color:#66d9ef&#34;&gt;catch&lt;/span&gt; (Exception e) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            e.&lt;span style=&#34;color:#a6e22e&#34;&gt;printStackTrace&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id=&#34;4-kết-quả-thực-hiện&#34;&gt;4. Kết quả thực hiện&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;File test.txt từ Client được gửi qua mạng&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Lập trình Multi Thread trong Java</title>
+      <link>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-6/</link>
+      <pubDate>Wed, 24 Dec 2025 09:15:00 +0700</pubDate>
+      <guid>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-6/</guid>
+      <description>&lt;p&gt;Multi thread là kỹ thuật cho phép chương trình chạy nhiều luồng
+cùng lúc để xử lý nhiều công việc song song.
+Trong lập trình mạng, multi thread được sử dụng phổ biến
+để server có thể phục vụ nhiều client đồng thời.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;1-khái-niệm-multi-thread&#34;&gt;1. Khái niệm Multi Thread&lt;/h2&gt;
+&lt;p&gt;Multi thread là việc tạo và quản lý nhiều thread trong cùng một chương trình.
+Mỗi thread thực hiện một công việc riêng nhưng cùng chia sẻ tài nguyên hệ thống.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Lập trình Single Thread trong Java</title>
+      <link>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-5/</link>
+      <pubDate>Wed, 24 Dec 2025 09:00:00 +0700</pubDate>
+      <guid>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-5/</guid>
+      <description>&lt;p&gt;Trong lập trình Java, thread (luồng) cho phép chương trình thực thi
+các công việc một cách độc lập với luồng chính.
+Thread là kiến thức quan trọng trong lập trình mạng, vì các chương trình
+client–server thường phải xử lý nhiều tác vụ khác nhau.&lt;/p&gt;
+&lt;p&gt;Trước khi tìm hiểu về multi thread, cần nắm vững khái niệm và cách sử dụng
+&lt;strong&gt;single thread&lt;/strong&gt; trong Java.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;1-khái-niệm-thread-trong-java&#34;&gt;1. Khái niệm Thread trong Java&lt;/h2&gt;
+&lt;p&gt;Thread là một luồng thực thi độc lập trong chương trình.
+Mỗi chương trình Java khi chạy đều có ít nhất một thread,
+được gọi là &lt;strong&gt;main thread&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Đọc và ghi file nhị phân trong Java</title>
+      <link>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-4/</link>
+      <pubDate>Wed, 24 Dec 2025 08:45:00 +0700</pubDate>
+      <guid>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-4/</guid>
+      <description>&lt;p&gt;Ngoài file văn bản, Java còn hỗ trợ làm việc với file nhị phân.
+File nhị phân thường được dùng để lưu dữ liệu dạng số hoặc dữ liệu có cấu trúc,
+giúp việc lưu trữ và truyền dữ liệu chính xác hơn.&lt;/p&gt;
+&lt;p&gt;Trong lập trình mạng, file nhị phân thường được sử dụng để:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Lưu dữ liệu truyền qua mạng&lt;/li&gt;
+&lt;li&gt;Lưu thông tin người dùng&lt;/li&gt;
+&lt;li&gt;Lưu kết quả xử lý của server&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;1-ghi-dữ-liệu-vào-file-nhị-phân&#34;&gt;1. Ghi dữ liệu vào file nhị phân&lt;/h2&gt;
+&lt;p&gt;Java cung cấp lớp &lt;code&gt;DataOutputStream&lt;/code&gt; để ghi dữ liệu nhị phân vào file.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Đọc và ghi file văn bản trong Java</title>
+      <link>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-3/</link>
+      <pubDate>Wed, 24 Dec 2025 08:30:00 +0700</pubDate>
+      <guid>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-3/</guid>
+      <description>&lt;p&gt;Trong lập trình mạng, dữ liệu thường không chỉ được nhập trực tiếp từ bàn phím
+mà còn được lưu trữ dưới dạng các tập tin văn bản.
+Do đó, Java cung cấp các lớp hỗ trợ đọc và ghi file văn bản trong gói &lt;code&gt;java.io&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Trong các bài thực hành lập trình mạng, file văn bản thường được dùng để:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Lưu dữ liệu cấu hình&lt;/li&gt;
+&lt;li&gt;Lưu nội dung gửi qua mạng&lt;/li&gt;
+&lt;li&gt;Ghi log trong chương trình client–server&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;1-ghi-dữ-liệu-vào-file-văn-bản&#34;&gt;1. Ghi dữ liệu vào file văn bản&lt;/h2&gt;
+&lt;p&gt;Để ghi dữ liệu vào file văn bản, Java thường sử dụng lớp &lt;code&gt;FileWriter&lt;/code&gt;.
+Lớp này cho phép ghi dữ liệu dạng ký tự vào file.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Làm việc với tập tin và thư mục trong Java</title>
+      <link>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-2/</link>
+      <pubDate>Wed, 24 Dec 2025 08:15:00 +0700</pubDate>
+      <guid>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-2/</guid>
+      <description>&lt;p&gt;Trong lập trình mạng, dữ liệu thường được lưu trữ hoặc trao đổi thông qua
+các tập tin trên máy tính.
+Vì vậy, Java cung cấp các lớp trong gói &lt;code&gt;java.io&lt;/code&gt; để hỗ trợ làm việc với
+tập tin và thư mục.&lt;/p&gt;
+&lt;p&gt;Trong các bài thực hành lập trình mạng, thao tác với file thường được dùng
+để đọc dữ liệu, ghi dữ liệu hoặc chuẩn bị dữ liệu trước khi truyền qua mạng.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Quản lý địa chỉ IP với lớp InetAddress</title>
+      <link>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-1/</link>
+      <pubDate>Wed, 24 Dec 2025 08:00:00 +0700</pubDate>
+      <guid>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-1/</guid>
+      <description>&lt;p&gt;Trong lập trình mạng Java, việc xác định địa chỉ của máy cục bộ hoặc máy từ xa
+là yêu cầu cơ bản khi xây dựng các ứng dụng client–server.
+Java cung cấp lớp &lt;code&gt;InetAddress&lt;/code&gt; thuộc gói &lt;code&gt;java.net&lt;/code&gt; để thực hiện các công việc
+liên quan đến địa chỉ IP và tên miền.&lt;/p&gt;
+&lt;p&gt;Lớp &lt;code&gt;InetAddress&lt;/code&gt; hỗ trợ cả hai chuẩn địa chỉ &lt;strong&gt;IPv4&lt;/strong&gt; và &lt;strong&gt;IPv6&lt;/strong&gt;, đồng thời cho
+phép phân giải tên miền (domain name) sang địa chỉ IP tương ứng.
+Đây là lớp thường xuyên xuất hiện trong các bài thực hành lập trình mạng.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

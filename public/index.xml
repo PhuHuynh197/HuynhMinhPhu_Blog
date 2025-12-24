@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Blog Huỳnh Minh Phú</title>
+    <link>http://localhost:1313/HuynhMinhPhu_Blog/</link>
+    <description>Recent content on Blog Huỳnh Minh Phú</description>
+    <generator>Hugo -- 0.153.2</generator>
+    <language>vi</language>
+    <lastBuildDate>Mon, 22 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/HuynhMinhPhu_Blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Giới Thiệu Profile</title>
+      <link>http://localhost:1313/HuynhMinhPhu_Blog/about/</link>
+      <pubDate>Mon, 22 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/HuynhMinhPhu_Blog/about/</guid>
+      <description>&lt;h2 id=&#34;xin-chào-mình-là-nguyễn-văn-a&#34;&gt;Xin chào, mình là Nguyễn Văn A&lt;/h2&gt;
+&lt;p&gt;Sinh viên lớp Lập trình mạng, trường đại học XYZ.
+Đây là blog mình chia sẻ về hành trình học Java và Network Programming.&lt;/p&gt;
+&lt;h3 id=&#34;kỹ-năng&#34;&gt;Kỹ năng&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Java:&lt;/strong&gt; Core, Socket, Multithreading&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Web:&lt;/strong&gt; HTML, CSS, JS basic&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Tools:&lt;/strong&gt; Git, VS Code&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;liên-hệ&#34;&gt;Liên hệ&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Email: &amp;hellip;&lt;/li&gt;
+&lt;li&gt;Github: &amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>
