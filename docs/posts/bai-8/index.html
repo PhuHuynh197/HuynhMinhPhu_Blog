@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto" data-theme="light">
 
-<head><script src="/HuynhMinhPhu_Blog/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=HuynhMinhPhu_Blog/livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>Lập trình UDP với Datagram trong Java | Huỳnh Minh Phú</title>
 <meta name="keywords" content="Java, Network, UDP">
 <meta name="description" content="Trong lập trình mạng, UDP (User Datagram Protocol) là giao thức truyền dữ liệu
@@ -84,16 +84,16 @@ public class UDPServer {
 
 UDP Client gửi dữ liệu mà không cần chờ phản hồi">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-8/">
+<link rel="canonical" href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-8/">
 <link crossorigin="anonymous" href="/HuynhMinhPhu_Blog/assets/css/stylesheet.fd5566c526ae48aadabd950798a2dc3568536401560eae5caac3765a42a9e7b5.css" integrity="sha256-/VVmxSauSKravZUHmKLcNWhTZAFWDq5cqsN2WkKp57U=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/HuynhMinhPhu_Blog/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/HuynhMinhPhu_Blog/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/HuynhMinhPhu_Blog/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/HuynhMinhPhu_Blog/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:1313/HuynhMinhPhu_Blog/safari-pinned-tab.svg">
+<link rel="icon" href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/apple-touch-icon.png">
+<link rel="mask-icon" href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-8/">
+<link rel="alternate" hreflang="en" href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-8/">
 <noscript>
     <style>
         #theme-toggle,
@@ -108,13 +108,154 @@ UDP Client gửi dữ liệu mà không cần chờ phản hồi">
         document.querySelector("html").dataset.theme = 'dark';
     }
 
+</script><meta property="og:url" content="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-8/">
+  <meta property="og:site_name" content="Huỳnh Minh Phú">
+  <meta property="og:title" content="Lập trình UDP với Datagram trong Java">
+  <meta property="og:description" content="Trong lập trình mạng, UDP (User Datagram Protocol) là giao thức truyền dữ liệu không kết nối. UDP không đảm bảo độ tin cậy nhưng có tốc độ truyền nhanh. Java hỗ trợ UDP thông qua các lớp DatagramSocket và DatagramPacket trong gói java.net.
+1. Đặc điểm của UDP Không cần thiết lập kết nối trước khi truyền dữ liệu Dữ liệu được gửi dưới dạng các gói tin (datagram) Không đảm bảo thứ tự và độ tin cậy Phù hợp cho các bài thực hành so sánh với TCP 2. UDP Client gửi dữ liệu import java.net.DatagramPacket; import java.net.DatagramSocket; import java.net.InetAddress; public class UDPClient { public static void main(String[] args) { try { // Tạo socket UDP phía client DatagramSocket socket = new DatagramSocket(); // Dữ liệu cần gửi String message = &#34;Hello UDP Server&#34;; byte[] data = message.getBytes(); // Địa chỉ IP server InetAddress serverAddress = InetAddress.getByName(&#34;localhost&#34;); // Tạo gói tin gửi đi DatagramPacket packet = new DatagramPacket(data, data.length, serverAddress, 9876); // Gửi gói tin socket.send(packet); // Đóng socket socket.close(); } catch (Exception e) { e.printStackTrace(); } } } 3. UDP Server nhận dữ liệu import java.net.DatagramPacket; import java.net.DatagramSocket; public class UDPServer { public static void main(String[] args) { try { DatagramSocket socket = new DatagramSocket(9876); byte[] buffer = new byte[1024]; DatagramPacket packet = new DatagramPacket(buffer, buffer.length); socket.receive(packet); String message = new String(packet.getData(), 0, packet.getLength()); System.out.println(&#34;Nhan duoc: &#34; &#43; message); socket.close(); } catch (Exception e) { e.printStackTrace(); } } } 4. Nhận xét UDP Client gửi dữ liệu mà không cần chờ phản hồi">
+  <meta property="og:locale" content="vi">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-12-24T10:00:00+07:00">
+    <meta property="article:modified_time" content="2025-12-24T10:00:00+07:00">
+    <meta property="article:tag" content="Java">
+    <meta property="article:tag" content="Network">
+    <meta property="article:tag" content="UDP">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Lập trình UDP với Datagram trong Java">
+<meta name="twitter:description" content="Trong lập trình mạng, UDP (User Datagram Protocol) là giao thức truyền dữ liệu
+không kết nối. UDP không đảm bảo độ tin cậy nhưng có tốc độ truyền nhanh.
+Java hỗ trợ UDP thông qua các lớp DatagramSocket và DatagramPacket
+trong gói java.net.
+
+1. Đặc điểm của UDP
+
+Không cần thiết lập kết nối trước khi truyền dữ liệu
+Dữ liệu được gửi dưới dạng các gói tin (datagram)
+Không đảm bảo thứ tự và độ tin cậy
+Phù hợp cho các bài thực hành so sánh với TCP
+
+
+2. UDP Client gửi dữ liệu
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+import java.net.InetAddress;
+
+public class UDPClient {
+    public static void main(String[] args) {
+        try {
+            // Tạo socket UDP phía client
+            DatagramSocket socket = new DatagramSocket();
+
+            // Dữ liệu cần gửi
+            String message = &#34;Hello UDP Server&#34;;
+            byte[] data = message.getBytes();
+
+            // Địa chỉ IP server
+            InetAddress serverAddress = InetAddress.getByName(&#34;localhost&#34;);
+
+            // Tạo gói tin gửi đi
+            DatagramPacket packet =
+                new DatagramPacket(data, data.length, serverAddress, 9876);
+
+            // Gửi gói tin
+            socket.send(packet);
+
+            // Đóng socket
+            socket.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+3. UDP Server nhận dữ liệu
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+
+public class UDPServer {
+    public static void main(String[] args) {
+        try {
+            DatagramSocket socket = new DatagramSocket(9876);
+            byte[] buffer = new byte[1024];
+
+            DatagramPacket packet =
+                new DatagramPacket(buffer, buffer.length);
+
+            socket.receive(packet);
+
+            String message =
+                new String(packet.getData(), 0, packet.getLength());
+
+            System.out.println(&#34;Nhan duoc: &#34; &#43; message);
+            socket.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+4. Nhận xét
+
+
+UDP Client gửi dữ liệu mà không cần chờ phản hồi">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Lập trình UDP với Datagram trong Java",
+      "item": "https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-8/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Lập trình UDP với Datagram trong Java",
+  "name": "Lập trình UDP với Datagram trong Java",
+  "description": "Trong lập trình mạng, UDP (User Datagram Protocol) là giao thức truyền dữ liệu không kết nối. UDP không đảm bảo độ tin cậy nhưng có tốc độ truyền nhanh. Java hỗ trợ UDP thông qua các lớp DatagramSocket và DatagramPacket trong gói java.net.\n1. Đặc điểm của UDP Không cần thiết lập kết nối trước khi truyền dữ liệu Dữ liệu được gửi dưới dạng các gói tin (datagram) Không đảm bảo thứ tự và độ tin cậy Phù hợp cho các bài thực hành so sánh với TCP 2. UDP Client gửi dữ liệu import java.net.DatagramPacket; import java.net.DatagramSocket; import java.net.InetAddress; public class UDPClient { public static void main(String[] args) { try { // Tạo socket UDP phía client DatagramSocket socket = new DatagramSocket(); // Dữ liệu cần gửi String message = \u0026#34;Hello UDP Server\u0026#34;; byte[] data = message.getBytes(); // Địa chỉ IP server InetAddress serverAddress = InetAddress.getByName(\u0026#34;localhost\u0026#34;); // Tạo gói tin gửi đi DatagramPacket packet = new DatagramPacket(data, data.length, serverAddress, 9876); // Gửi gói tin socket.send(packet); // Đóng socket socket.close(); } catch (Exception e) { e.printStackTrace(); } } } 3. UDP Server nhận dữ liệu import java.net.DatagramPacket; import java.net.DatagramSocket; public class UDPServer { public static void main(String[] args) { try { DatagramSocket socket = new DatagramSocket(9876); byte[] buffer = new byte[1024]; DatagramPacket packet = new DatagramPacket(buffer, buffer.length); socket.receive(packet); String message = new String(packet.getData(), 0, packet.getLength()); System.out.println(\u0026#34;Nhan duoc: \u0026#34; + message); socket.close(); } catch (Exception e) { e.printStackTrace(); } } } 4. Nhận xét UDP Client gửi dữ liệu mà không cần chờ phản hồi\n",
+  "keywords": [
+    "Java", "Network", "UDP"
+  ],
+  "articleBody": "Trong lập trình mạng, UDP (User Datagram Protocol) là giao thức truyền dữ liệu không kết nối. UDP không đảm bảo độ tin cậy nhưng có tốc độ truyền nhanh. Java hỗ trợ UDP thông qua các lớp DatagramSocket và DatagramPacket trong gói java.net.\n1. Đặc điểm của UDP Không cần thiết lập kết nối trước khi truyền dữ liệu Dữ liệu được gửi dưới dạng các gói tin (datagram) Không đảm bảo thứ tự và độ tin cậy Phù hợp cho các bài thực hành so sánh với TCP 2. UDP Client gửi dữ liệu import java.net.DatagramPacket; import java.net.DatagramSocket; import java.net.InetAddress; public class UDPClient { public static void main(String[] args) { try { // Tạo socket UDP phía client DatagramSocket socket = new DatagramSocket(); // Dữ liệu cần gửi String message = \"Hello UDP Server\"; byte[] data = message.getBytes(); // Địa chỉ IP server InetAddress serverAddress = InetAddress.getByName(\"localhost\"); // Tạo gói tin gửi đi DatagramPacket packet = new DatagramPacket(data, data.length, serverAddress, 9876); // Gửi gói tin socket.send(packet); // Đóng socket socket.close(); } catch (Exception e) { e.printStackTrace(); } } } 3. UDP Server nhận dữ liệu import java.net.DatagramPacket; import java.net.DatagramSocket; public class UDPServer { public static void main(String[] args) { try { DatagramSocket socket = new DatagramSocket(9876); byte[] buffer = new byte[1024]; DatagramPacket packet = new DatagramPacket(buffer, buffer.length); socket.receive(packet); String message = new String(packet.getData(), 0, packet.getLength()); System.out.println(\"Nhan duoc: \" + message); socket.close(); } catch (Exception e) { e.printStackTrace(); } } } 4. Nhận xét UDP Client gửi dữ liệu mà không cần chờ phản hồi\nUDP Server luôn ở trạng thái chờ nhận datagram\nUDP thường được sử dụng trong các bài thực hành cơ bản để so sánh với TCP\n",
+  "wordCount" : "282",
+  "inLanguage": "en",
+  "datePublished": "2025-12-24T10:00:00+07:00",
+  "dateModified": "2025-12-24T10:00:00+07:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-8/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Huỳnh Minh Phú",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/favicon.ico"
+    }
+  }
+}
 </script>
 </head>
 <body id="top">
     <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/HuynhMinhPhu_Blog/" accesskey="h" title="Huỳnh Minh Phú (Alt + H)">Huỳnh Minh Phú</a>
+            <a href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/" accesskey="h" title="Huỳnh Minh Phú (Alt + H)">Huỳnh Minh Phú</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -140,27 +281,27 @@ UDP Client gửi dữ liệu mà không cần chờ phản hồi">
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:1313/HuynhMinhPhu_Blog/" title="Trang Chủ">
+                <a href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/" title="Trang Chủ">
                     <span>Trang Chủ</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/HuynhMinhPhu_Blog/posts" title="Bài Viết">
+                <a href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts" title="Bài Viết">
                     <span>Bài Viết</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/HuynhMinhPhu_Blog/about" title="Giới Thiệu">
+                <a href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/about" title="Giới Thiệu">
                     <span>Giới Thiệu</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/HuynhMinhPhu_Blog/posts" title="Liên Hệ">
+                <a href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts" title="Liên Hệ">
                     <span>Liên Hệ</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/HuynhMinhPhu_Blog/posts" title="CV">
+                <a href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts" title="CV">
                     <span>CV</span>
                 </a>
             </li>
@@ -373,7 +514,7 @@ trong gói <code>java.net</code>.</p>
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="http://localhost:1313/HuynhMinhPhu_Blog/">Huỳnh Minh Phú</a></span> · 
+        <span>&copy; 2025 <a href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/">Huỳnh Minh Phú</a></span> · 
 
     <span>
         Powered by

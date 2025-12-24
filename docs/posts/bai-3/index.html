@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto" data-theme="light">
 
-<head><script src="/HuynhMinhPhu_Blog/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=HuynhMinhPhu_Blog/livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>Đọc và ghi file văn bản trong Java | Huỳnh Minh Phú</title>
 <meta name="keywords" content="Java, File, IO">
 <meta name="description" content="Trong lập trình mạng, dữ liệu thường không chỉ được nhập trực tiếp từ bàn phím
@@ -21,16 +21,16 @@ Ghi log trong chương trình client–server
 Để ghi dữ liệu vào file văn bản, Java thường sử dụng lớp FileWriter.
 Lớp này cho phép ghi dữ liệu dạng ký tự vào file.">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-3/">
+<link rel="canonical" href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-3/">
 <link crossorigin="anonymous" href="/HuynhMinhPhu_Blog/assets/css/stylesheet.fd5566c526ae48aadabd950798a2dc3568536401560eae5caac3765a42a9e7b5.css" integrity="sha256-/VVmxSauSKravZUHmKLcNWhTZAFWDq5cqsN2WkKp57U=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/HuynhMinhPhu_Blog/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/HuynhMinhPhu_Blog/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/HuynhMinhPhu_Blog/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/HuynhMinhPhu_Blog/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:1313/HuynhMinhPhu_Blog/safari-pinned-tab.svg">
+<link rel="icon" href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/apple-touch-icon.png">
+<link rel="mask-icon" href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-3/">
+<link rel="alternate" hreflang="en" href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-3/">
 <noscript>
     <style>
         #theme-toggle,
@@ -45,13 +45,92 @@ Lớp này cho phép ghi dữ liệu dạng ký tự vào file.">
         document.querySelector("html").dataset.theme = 'dark';
     }
 
+</script><meta property="og:url" content="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-3/">
+  <meta property="og:site_name" content="Huỳnh Minh Phú">
+  <meta property="og:title" content="Đọc và ghi file văn bản trong Java">
+  <meta property="og:description" content="Trong lập trình mạng, dữ liệu thường không chỉ được nhập trực tiếp từ bàn phím mà còn được lưu trữ dưới dạng các tập tin văn bản. Do đó, Java cung cấp các lớp hỗ trợ đọc và ghi file văn bản trong gói java.io.
+Trong các bài thực hành lập trình mạng, file văn bản thường được dùng để:
+Lưu dữ liệu cấu hình Lưu nội dung gửi qua mạng Ghi log trong chương trình client–server 1. Ghi dữ liệu vào file văn bản Để ghi dữ liệu vào file văn bản, Java thường sử dụng lớp FileWriter. Lớp này cho phép ghi dữ liệu dạng ký tự vào file.">
+  <meta property="og:locale" content="vi">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-12-24T08:30:00+07:00">
+    <meta property="article:modified_time" content="2025-12-24T08:30:00+07:00">
+    <meta property="article:tag" content="Java">
+    <meta property="article:tag" content="File">
+    <meta property="article:tag" content="IO">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Đọc và ghi file văn bản trong Java">
+<meta name="twitter:description" content="Trong lập trình mạng, dữ liệu thường không chỉ được nhập trực tiếp từ bàn phím
+mà còn được lưu trữ dưới dạng các tập tin văn bản.
+Do đó, Java cung cấp các lớp hỗ trợ đọc và ghi file văn bản trong gói java.io.
+Trong các bài thực hành lập trình mạng, file văn bản thường được dùng để:
+
+Lưu dữ liệu cấu hình
+Lưu nội dung gửi qua mạng
+Ghi log trong chương trình client–server
+
+
+1. Ghi dữ liệu vào file văn bản
+Để ghi dữ liệu vào file văn bản, Java thường sử dụng lớp FileWriter.
+Lớp này cho phép ghi dữ liệu dạng ký tự vào file.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Đọc và ghi file văn bản trong Java",
+      "item": "https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-3/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Đọc và ghi file văn bản trong Java",
+  "name": "Đọc và ghi file văn bản trong Java",
+  "description": "Trong lập trình mạng, dữ liệu thường không chỉ được nhập trực tiếp từ bàn phím mà còn được lưu trữ dưới dạng các tập tin văn bản. Do đó, Java cung cấp các lớp hỗ trợ đọc và ghi file văn bản trong gói java.io.\nTrong các bài thực hành lập trình mạng, file văn bản thường được dùng để:\nLưu dữ liệu cấu hình Lưu nội dung gửi qua mạng Ghi log trong chương trình client–server 1. Ghi dữ liệu vào file văn bản Để ghi dữ liệu vào file văn bản, Java thường sử dụng lớp FileWriter. Lớp này cho phép ghi dữ liệu dạng ký tự vào file.\n",
+  "keywords": [
+    "Java", "File", "IO"
+  ],
+  "articleBody": "Trong lập trình mạng, dữ liệu thường không chỉ được nhập trực tiếp từ bàn phím mà còn được lưu trữ dưới dạng các tập tin văn bản. Do đó, Java cung cấp các lớp hỗ trợ đọc và ghi file văn bản trong gói java.io.\nTrong các bài thực hành lập trình mạng, file văn bản thường được dùng để:\nLưu dữ liệu cấu hình Lưu nội dung gửi qua mạng Ghi log trong chương trình client–server 1. Ghi dữ liệu vào file văn bản Để ghi dữ liệu vào file văn bản, Java thường sử dụng lớp FileWriter. Lớp này cho phép ghi dữ liệu dạng ký tự vào file.\nVí dụ ghi nội dung vào file văn bản import java.io.FileWriter; public class WriteTextFile { public static void main(String[] args) { try { FileWriter writer = new FileWriter(\"data.txt\"); writer.write(\"Lap trinh mang Java\\n\"); writer.write(\"Thuc hanh doc va ghi file\"); writer.close(); System.out.println(\"Ghi file thanh cong\"); } catch (Exception e) { e.printStackTrace(); } } } 2. Đọc dữ liệu từ file văn bản Sau khi đã ghi dữ liệu vào file, ta có thể đọc lại nội dung file bằng FileReader kết hợp với BufferedReader.\nVí dụ đọc nội dung từ file văn bản:\nimport java.io.BufferedReader; import java.io.FileReader; public class ReadTextFile { public static void main(String[] args) { try { BufferedReader reader = new BufferedReader(new FileReader(\"data.txt\")); String line; while ((line = reader.readLine()) != null) { System.out.println(line); } reader.close(); } catch (Exception e) { e.printStackTrace(); } } } 3. Giải thích chương trình FileWriter Dùng để ghi dữ liệu dạng văn bản vào file.\nBufferedReader Giúp đọc dữ liệu từng dòng, tăng hiệu suất so với đọc từng ký tự.\nreadLine() Trả về một dòng văn bản, trả về null khi hết file.\nNhững lớp này thường được sử dụng trong các bài thực hành trước khi dữ liệu được gửi qua mạng.\n4. Liên hệ bài học lập trình mạng Trong các chương trình client–server:\nClient có thể đọc dữ liệu từ file để gửi lên server\nServer có thể ghi dữ liệu nhận được từ client vào file\nVì vậy, việc nắm vững cách đọc và ghi file văn bản là nền tảng quan trọng trước khi học đến truyền dữ liệu qua Socket.\n",
+  "wordCount" : "374",
+  "inLanguage": "en",
+  "datePublished": "2025-12-24T08:30:00+07:00",
+  "dateModified": "2025-12-24T08:30:00+07:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-3/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Huỳnh Minh Phú",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/favicon.ico"
+    }
+  }
+}
 </script>
 </head>
 <body id="top">
     <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/HuynhMinhPhu_Blog/" accesskey="h" title="Huỳnh Minh Phú (Alt + H)">Huỳnh Minh Phú</a>
+            <a href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/" accesskey="h" title="Huỳnh Minh Phú (Alt + H)">Huỳnh Minh Phú</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -77,27 +156,27 @@ Lớp này cho phép ghi dữ liệu dạng ký tự vào file.">
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:1313/HuynhMinhPhu_Blog/" title="Trang Chủ">
+                <a href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/" title="Trang Chủ">
                     <span>Trang Chủ</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/HuynhMinhPhu_Blog/posts" title="Bài Viết">
+                <a href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts" title="Bài Viết">
                     <span>Bài Viết</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/HuynhMinhPhu_Blog/about" title="Giới Thiệu">
+                <a href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/about" title="Giới Thiệu">
                     <span>Giới Thiệu</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/HuynhMinhPhu_Blog/posts" title="Liên Hệ">
+                <a href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts" title="Liên Hệ">
                     <span>Liên Hệ</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/HuynhMinhPhu_Blog/posts" title="CV">
+                <a href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts" title="CV">
                     <span>CV</span>
                 </a>
             </li>
@@ -311,7 +390,7 @@ trước khi học đến truyền dữ liệu qua Socket.</p>
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="http://localhost:1313/HuynhMinhPhu_Blog/">Huỳnh Minh Phú</a></span> · 
+        <span>&copy; 2025 <a href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/">Huỳnh Minh Phú</a></span> · 
 
     <span>
         Powered by

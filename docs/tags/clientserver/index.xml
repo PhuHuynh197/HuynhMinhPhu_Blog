@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>ClientServer on Huỳnh Minh Phú</title>
-    <link>http://localhost:1313/HuynhMinhPhu_Blog/tags/clientserver/</link>
+    <link>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/tags/clientserver/</link>
     <description>Recent content in ClientServer on Huỳnh Minh Phú</description>
     <generator>Hugo -- 0.153.2</generator>
     <language>vi</language>
     <lastBuildDate>Wed, 24 Dec 2025 10:20:00 +0700</lastBuildDate>
-    <atom:link href="http://localhost:1313/HuynhMinhPhu_Blog/tags/clientserver/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/tags/clientserver/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Tổng hợp mô hình Client – Server trong lập trình mạng Java</title>
-      <link>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-10/</link>
+      <link>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-10/</link>
       <pubDate>Wed, 24 Dec 2025 10:20:00 +0700</pubDate>
-      <guid>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-10/</guid>
+      <guid>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-10/</guid>
       <description>&lt;p&gt;Mô hình Client – Server là mô hình nền tảng trong lập trình mạng.
 Toàn bộ các bài thực hành trong môn Lập trình mạng Java
 đều xoay quanh mô hình này với hai giao thức chính là TCP và UDP.&lt;/p&gt;
@@ -51,7 +51,18 @@ Toàn bộ các bài thực hành trong môn Lập trình mạng Java
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id=&#34;4-luồng-xử-lý-udp-client--server&#34;&gt;4. Luồng xử lý UDP Client – Server&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// UDP Client&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;DatagramSocket clientSocket &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; DatagramSocket();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// UDP Server&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;DatagramSocket serverSocket &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; DatagramSocket(9876);
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id=&#34;5-tổng-kết-bài-học&#34;&gt;5. Tổng kết bài học&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;InetAddress&lt;/code&gt; dùng để xử lý địa chỉ IP&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

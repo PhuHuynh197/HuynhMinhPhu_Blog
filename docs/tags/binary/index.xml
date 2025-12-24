@@ -2,42 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Binary on Huỳnh Minh Phú</title>
-    <link>http://localhost:1313/HuynhMinhPhu_Blog/tags/binary/</link>
+    <link>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/tags/binary/</link>
     <description>Recent content in Binary on Huỳnh Minh Phú</description>
     <generator>Hugo -- 0.153.2</generator>
     <language>vi</language>
-    <lastBuildDate>Wed, 24 Dec 2025 08:20:00 +0700</lastBuildDate>
-    <atom:link href="http://localhost:1313/HuynhMinhPhu_Blog/tags/binary/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 24 Dec 2025 08:45:00 +0700</lastBuildDate>
+    <atom:link href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/tags/binary/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Ghi và đọc file nhị phân trong Java</title>
-      <link>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-3/</link>
-      <pubDate>Wed, 24 Dec 2025 08:20:00 +0700</pubDate>
-      <guid>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-3/</guid>
-      <description>&lt;p&gt;File nhị phân thường được sử dụng để lưu trữ dữ liệu dưới dạng byte,
-giúp chương trình xử lý dữ liệu nhanh và hiệu quả.&lt;/p&gt;
-&lt;h2 id=&#34;ví-dụ-ghi-và-đọc-file-nhị-phân&#34;&gt;Ví dụ ghi và đọc file nhị phân&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; java.io.*;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;BinaryFileDemo&lt;/span&gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;(String&lt;span style=&#34;color:#f92672&#34;&gt;[]&lt;/span&gt; args) {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;try&lt;/span&gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            DataOutputStream dos &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; DataOutputStream(&lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; FileOutputStream(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;data.dat&amp;#34;&lt;/span&gt;));
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            dos.&lt;span style=&#34;color:#a6e22e&#34;&gt;writeInt&lt;/span&gt;(100);
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            dos.&lt;span style=&#34;color:#a6e22e&#34;&gt;writeDouble&lt;/span&gt;(9.&lt;span style=&#34;color:#a6e22e&#34;&gt;5&lt;/span&gt;);
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            dos.&lt;span style=&#34;color:#a6e22e&#34;&gt;close&lt;/span&gt;();
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            DataInputStream dis &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; DataInputStream(&lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; FileInputStream(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;data.dat&amp;#34;&lt;/span&gt;));
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            System.&lt;span style=&#34;color:#a6e22e&#34;&gt;out&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;println&lt;/span&gt;(dis.&lt;span style=&#34;color:#a6e22e&#34;&gt;readInt&lt;/span&gt;());
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            System.&lt;span style=&#34;color:#a6e22e&#34;&gt;out&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;println&lt;/span&gt;(dis.&lt;span style=&#34;color:#a6e22e&#34;&gt;readDouble&lt;/span&gt;());
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            dis.&lt;span style=&#34;color:#a6e22e&#34;&gt;close&lt;/span&gt;();
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        } &lt;span style=&#34;color:#66d9ef&#34;&gt;catch&lt;/span&gt; (Exception e) {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            e.&lt;span style=&#34;color:#a6e22e&#34;&gt;printStackTrace&lt;/span&gt;();
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+      <title>Đọc và ghi file nhị phân trong Java</title>
+      <link>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-4/</link>
+      <pubDate>Wed, 24 Dec 2025 08:45:00 +0700</pubDate>
+      <guid>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-4/</guid>
+      <description>&lt;p&gt;Ngoài file văn bản, Java còn hỗ trợ làm việc với file nhị phân.
+File nhị phân thường được dùng để lưu dữ liệu dạng số hoặc dữ liệu có cấu trúc,
+giúp việc lưu trữ và truyền dữ liệu chính xác hơn.&lt;/p&gt;
+&lt;p&gt;Trong lập trình mạng, file nhị phân thường được sử dụng để:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Lưu dữ liệu truyền qua mạng&lt;/li&gt;
+&lt;li&gt;Lưu thông tin người dùng&lt;/li&gt;
+&lt;li&gt;Lưu kết quả xử lý của server&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;1-ghi-dữ-liệu-vào-file-nhị-phân&#34;&gt;1. Ghi dữ liệu vào file nhị phân&lt;/h2&gt;
+&lt;p&gt;Java cung cấp lớp &lt;code&gt;DataOutputStream&lt;/code&gt; để ghi dữ liệu nhị phân vào file.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

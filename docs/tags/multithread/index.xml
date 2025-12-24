@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Multithread on Huỳnh Minh Phú</title>
-    <link>http://localhost:1313/HuynhMinhPhu_Blog/tags/multithread/</link>
+    <link>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/tags/multithread/</link>
     <description>Recent content in Multithread on Huỳnh Minh Phú</description>
     <generator>Hugo -- 0.153.2</generator>
     <language>vi</language>
     <lastBuildDate>Wed, 24 Dec 2025 09:15:00 +0700</lastBuildDate>
-    <atom:link href="http://localhost:1313/HuynhMinhPhu_Blog/tags/multithread/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/tags/multithread/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Lập trình Multi Thread trong Java</title>
-      <link>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-6/</link>
+      <link>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-6/</link>
       <pubDate>Wed, 24 Dec 2025 09:15:00 +0700</pubDate>
-      <guid>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-6/</guid>
+      <guid>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-6/</guid>
       <description>&lt;p&gt;Multi thread là kỹ thuật cho phép chương trình chạy nhiều luồng
 cùng lúc để xử lý nhiều công việc song song.
 Trong lập trình mạng, multi thread được sử dụng phổ biến

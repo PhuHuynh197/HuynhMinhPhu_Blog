@@ -2,35 +2,60 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>IO on Huỳnh Minh Phú</title>
-    <link>http://localhost:1313/HuynhMinhPhu_Blog/tags/io/</link>
+    <link>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/tags/io/</link>
     <description>Recent content in IO on Huỳnh Minh Phú</description>
     <generator>Hugo -- 0.153.2</generator>
     <language>vi</language>
-    <lastBuildDate>Wed, 24 Dec 2025 08:10:00 +0700</lastBuildDate>
-    <atom:link href="http://localhost:1313/HuynhMinhPhu_Blog/tags/io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 24 Dec 2025 08:45:00 +0700</lastBuildDate>
+    <atom:link href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/tags/io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Làm việc với File và thư mục trong Java</title>
-      <link>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-2/</link>
-      <pubDate>Wed, 24 Dec 2025 08:10:00 +0700</pubDate>
-      <guid>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-2/</guid>
-      <description>&lt;p&gt;Trong Java, lớp &lt;code&gt;File&lt;/code&gt; thuộc gói &lt;code&gt;java.io&lt;/code&gt; cho phép làm việc với
-tập tin và thư mục như tạo, xóa, kiểm tra tồn tại và liệt kê nội dung.&lt;/p&gt;
-&lt;h2 id=&#34;ví-dụ-liệt-kê-các-file-trong-một-thư-mục&#34;&gt;Ví dụ liệt kê các file trong một thư mục&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; java.io.File;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;FileDemo&lt;/span&gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;(String&lt;span style=&#34;color:#f92672&#34;&gt;[]&lt;/span&gt; args) {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        File dir &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; File(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;D:/Data&amp;#34;&lt;/span&gt;);
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (dir.&lt;span style=&#34;color:#a6e22e&#34;&gt;exists&lt;/span&gt;() &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; dir.&lt;span style=&#34;color:#a6e22e&#34;&gt;isDirectory&lt;/span&gt;()) {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            File&lt;span style=&#34;color:#f92672&#34;&gt;[]&lt;/span&gt; files &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; dir.&lt;span style=&#34;color:#a6e22e&#34;&gt;listFiles&lt;/span&gt;();
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; (File f : files) {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                System.&lt;span style=&#34;color:#a6e22e&#34;&gt;out&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;println&lt;/span&gt;(f.&lt;span style=&#34;color:#a6e22e&#34;&gt;getName&lt;/span&gt;());
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            }
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+      <title>Đọc và ghi file nhị phân trong Java</title>
+      <link>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-4/</link>
+      <pubDate>Wed, 24 Dec 2025 08:45:00 +0700</pubDate>
+      <guid>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-4/</guid>
+      <description>&lt;p&gt;Ngoài file văn bản, Java còn hỗ trợ làm việc với file nhị phân.
+File nhị phân thường được dùng để lưu dữ liệu dạng số hoặc dữ liệu có cấu trúc,
+giúp việc lưu trữ và truyền dữ liệu chính xác hơn.&lt;/p&gt;
+&lt;p&gt;Trong lập trình mạng, file nhị phân thường được sử dụng để:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Lưu dữ liệu truyền qua mạng&lt;/li&gt;
+&lt;li&gt;Lưu thông tin người dùng&lt;/li&gt;
+&lt;li&gt;Lưu kết quả xử lý của server&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;1-ghi-dữ-liệu-vào-file-nhị-phân&#34;&gt;1. Ghi dữ liệu vào file nhị phân&lt;/h2&gt;
+&lt;p&gt;Java cung cấp lớp &lt;code&gt;DataOutputStream&lt;/code&gt; để ghi dữ liệu nhị phân vào file.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Đọc và ghi file văn bản trong Java</title>
+      <link>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-3/</link>
+      <pubDate>Wed, 24 Dec 2025 08:30:00 +0700</pubDate>
+      <guid>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-3/</guid>
+      <description>&lt;p&gt;Trong lập trình mạng, dữ liệu thường không chỉ được nhập trực tiếp từ bàn phím
+mà còn được lưu trữ dưới dạng các tập tin văn bản.
+Do đó, Java cung cấp các lớp hỗ trợ đọc và ghi file văn bản trong gói &lt;code&gt;java.io&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Trong các bài thực hành lập trình mạng, file văn bản thường được dùng để:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Lưu dữ liệu cấu hình&lt;/li&gt;
+&lt;li&gt;Lưu nội dung gửi qua mạng&lt;/li&gt;
+&lt;li&gt;Ghi log trong chương trình client–server&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;1-ghi-dữ-liệu-vào-file-văn-bản&#34;&gt;1. Ghi dữ liệu vào file văn bản&lt;/h2&gt;
+&lt;p&gt;Để ghi dữ liệu vào file văn bản, Java thường sử dụng lớp &lt;code&gt;FileWriter&lt;/code&gt;.
+Lớp này cho phép ghi dữ liệu dạng ký tự vào file.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Làm việc với tập tin và thư mục trong Java</title>
+      <link>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-2/</link>
+      <pubDate>Wed, 24 Dec 2025 08:15:00 +0700</pubDate>
+      <guid>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-2/</guid>
+      <description>&lt;p&gt;Trong lập trình mạng, dữ liệu thường được lưu trữ hoặc trao đổi thông qua
+các tập tin trên máy tính.
+Vì vậy, Java cung cấp các lớp trong gói &lt;code&gt;java.io&lt;/code&gt; để hỗ trợ làm việc với
+tập tin và thư mục.&lt;/p&gt;
+&lt;p&gt;Trong các bài thực hành lập trình mạng, thao tác với file thường được dùng
+để đọc dữ liệu, ghi dữ liệu hoặc chuẩn bị dữ liệu trước khi truyền qua mạng.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
