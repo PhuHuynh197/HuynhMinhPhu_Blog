@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Socket on Huỳnh Minh Phú</title>
-    <link>http://localhost:1313/HuynhMinhPhu_Blog/tags/socket/</link>
+    <link>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/tags/socket/</link>
     <description>Recent content in Socket on Huỳnh Minh Phú</description>
     <generator>Hugo -- 0.153.2</generator>
     <language>vi</language>
     <lastBuildDate>Fri, 24 Oct 2025 09:20:00 +0700</lastBuildDate>
-    <atom:link href="http://localhost:1313/HuynhMinhPhu_Blog/tags/socket/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/tags/socket/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Truyền file giữa Client và Server trong Java</title>
-      <link>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-9/</link>
+      <link>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-9/</link>
       <pubDate>Fri, 24 Oct 2025 09:20:00 +0700</pubDate>
-      <guid>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-9/</guid>
+      <guid>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-9/</guid>
       <description>&lt;p&gt;Ứng dụng truyền file là một trong những bài thực hành quan trọng
 trong môn Lập trình mạng Java.
 Bài thực hành này giúp hiểu rõ cách sử dụng Socket để truyền dữ liệu

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Network on Huỳnh Minh Phú</title>
-    <link>http://localhost:1313/HuynhMinhPhu_Blog/tags/network/</link>
+    <link>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/tags/network/</link>
     <description>Recent content in Network on Huỳnh Minh Phú</description>
     <generator>Hugo -- 0.153.2</generator>
     <language>vi</language>
     <lastBuildDate>Wed, 24 Dec 2025 08:00:00 +0700</lastBuildDate>
-    <atom:link href="http://localhost:1313/HuynhMinhPhu_Blog/tags/network/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/tags/network/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Quản lý địa chỉ IP với lớp InetAddress</title>
-      <link>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-1/</link>
+      <link>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-1/</link>
       <pubDate>Wed, 24 Dec 2025 08:00:00 +0700</pubDate>
-      <guid>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-1/</guid>
+      <guid>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-1/</guid>
       <description>&lt;p&gt;Trong lập trình mạng Java, việc xác định địa chỉ của máy cục bộ hoặc máy từ xa
 là yêu cầu cơ bản khi xây dựng các ứng dụng client–server.
 Java cung cấp lớp &lt;code&gt;InetAddress&lt;/code&gt; thuộc gói &lt;code&gt;java.net&lt;/code&gt; để thực hiện các công việc
@@ -23,9 +23,9 @@ phép phân giải tên miền (domain name) sang địa chỉ IP tương ứng.
     </item>
     <item>
       <title>Lập trình TCP Client và TCP Server trong Java</title>
-      <link>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-7/</link>
+      <link>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-7/</link>
       <pubDate>Mon, 06 Oct 2025 09:30:00 +0700</pubDate>
-      <guid>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-7/</guid>
+      <guid>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-7/</guid>
       <description>&lt;p&gt;Trong mô hình lập trình mạng TCP, &lt;strong&gt;Client&lt;/strong&gt; là phía khởi tạo kết nối đến Server.
 Client sử dụng lớp &lt;code&gt;Socket&lt;/code&gt; để kết nối đến địa chỉ IP và cổng (port) của Server.
 Dưới đây là các khái niệm.&lt;/p&gt;
@@ -42,9 +42,9 @@ thuộc gói &lt;code&gt;java.net&lt;/code&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Lập trình UDP với Datagram trong Java</title>
-      <link>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-8/</link>
+      <link>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-8/</link>
       <pubDate>Sat, 19 Jul 2025 10:00:00 +0700</pubDate>
-      <guid>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-8/</guid>
+      <guid>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-8/</guid>
       <description>&lt;p&gt;Trong lập trình mạng, UDP (User Datagram Protocol) là giao thức truyền dữ liệu
 không kết nối. UDP không đảm bảo độ tin cậy nhưng có tốc độ truyền nhanh.
 Java hỗ trợ UDP thông qua các lớp &lt;code&gt;DatagramSocket&lt;/code&gt; và &lt;code&gt;DatagramPacket&lt;/code&gt;
@@ -124,9 +124,9 @@ trong gói &lt;code&gt;java.net&lt;/code&gt;.&lt;/p&gt;
     </item>
     <item>
       <title>Tổng hợp mô hình Client – Server trong lập trình mạng Java</title>
-      <link>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-10/</link>
+      <link>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-10/</link>
       <pubDate>Fri, 07 Mar 2025 10:20:00 +0700</pubDate>
-      <guid>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-10/</guid>
+      <guid>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-10/</guid>
       <description>&lt;p&gt;Mô hình Client – Server là mô hình nền tảng trong lập trình mạng.
 Toàn bộ các bài thực hành trong môn Lập trình mạng Java
 đều xoay quanh mô hình này với hai giao thức chính là TCP và UDP.&lt;/p&gt;

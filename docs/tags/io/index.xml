@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>IO on Huỳnh Minh Phú</title>
-    <link>http://localhost:1313/HuynhMinhPhu_Blog/tags/io/</link>
+    <link>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/tags/io/</link>
     <description>Recent content in IO on Huỳnh Minh Phú</description>
     <generator>Hugo -- 0.153.2</generator>
     <language>vi</language>
     <lastBuildDate>Mon, 15 Dec 2025 08:15:00 +0700</lastBuildDate>
-    <atom:link href="http://localhost:1313/HuynhMinhPhu_Blog/tags/io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/tags/io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Làm việc với tập tin và thư mục trong Java</title>
-      <link>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-2/</link>
+      <link>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-2/</link>
       <pubDate>Mon, 15 Dec 2025 08:15:00 +0700</pubDate>
-      <guid>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-2/</guid>
+      <guid>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-2/</guid>
       <description>&lt;p&gt;Trong lập trình mạng, dữ liệu thường được lưu trữ hoặc trao đổi thông qua
 các tập tin trên máy tính.
 Vì vậy, Java cung cấp các lớp trong gói &lt;code&gt;java.io&lt;/code&gt; để hỗ trợ làm việc với
@@ -22,9 +22,9 @@ tập tin và thư mục.&lt;/p&gt;
     </item>
     <item>
       <title>Đọc và ghi file văn bản trong Java</title>
-      <link>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-3/</link>
+      <link>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-3/</link>
       <pubDate>Sat, 06 Dec 2025 08:30:00 +0700</pubDate>
-      <guid>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-3/</guid>
+      <guid>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-3/</guid>
       <description>&lt;p&gt;Trong lập trình mạng, dữ liệu thường không chỉ được nhập trực tiếp từ bàn phím
 mà còn được lưu trữ dưới dạng các tập tin văn bản.
 Do đó, Java cung cấp các lớp hỗ trợ đọc và ghi file văn bản trong gói &lt;code&gt;java.io&lt;/code&gt;.&lt;/p&gt;
@@ -41,9 +41,9 @@ Lớp này cho phép ghi dữ liệu dạng ký tự vào file.&lt;/p&gt;</descr
     </item>
     <item>
       <title>Đọc và ghi file nhị phân trong Java</title>
-      <link>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-4/</link>
+      <link>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-4/</link>
       <pubDate>Sat, 22 Nov 2025 08:45:00 +0700</pubDate>
-      <guid>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-4/</guid>
+      <guid>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-4/</guid>
       <description>&lt;p&gt;Ngoài file văn bản, Java còn hỗ trợ làm việc với file nhị phân.
 File nhị phân thường được dùng để lưu dữ liệu dạng số hoặc dữ liệu có cấu trúc,
 giúp việc lưu trữ và truyền dữ liệu chính xác hơn.&lt;/p&gt;

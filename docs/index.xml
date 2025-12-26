@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Huỳnh Minh Phú</title>
-    <link>http://localhost:1313/HuynhMinhPhu_Blog/</link>
+    <link>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/</link>
     <description>Recent content on Huỳnh Minh Phú</description>
     <generator>Hugo -- 0.153.2</generator>
     <language>vi</language>
     <lastBuildDate>Wed, 24 Dec 2025 08:00:00 +0700</lastBuildDate>
-    <atom:link href="http://localhost:1313/HuynhMinhPhu_Blog/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Quản lý địa chỉ IP với lớp InetAddress</title>
-      <link>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-1/</link>
+      <link>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-1/</link>
       <pubDate>Wed, 24 Dec 2025 08:00:00 +0700</pubDate>
-      <guid>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-1/</guid>
+      <guid>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-1/</guid>
       <description>&lt;p&gt;Trong lập trình mạng Java, việc xác định địa chỉ của máy cục bộ hoặc máy từ xa
 là yêu cầu cơ bản khi xây dựng các ứng dụng client–server.
 Java cung cấp lớp &lt;code&gt;InetAddress&lt;/code&gt; thuộc gói &lt;code&gt;java.net&lt;/code&gt; để thực hiện các công việc
@@ -23,9 +23,9 @@ phép phân giải tên miền (domain name) sang địa chỉ IP tương ứng.
     </item>
     <item>
       <title>Làm việc với tập tin và thư mục trong Java</title>
-      <link>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-2/</link>
+      <link>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-2/</link>
       <pubDate>Mon, 15 Dec 2025 08:15:00 +0700</pubDate>
-      <guid>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-2/</guid>
+      <guid>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-2/</guid>
       <description>&lt;p&gt;Trong lập trình mạng, dữ liệu thường được lưu trữ hoặc trao đổi thông qua
 các tập tin trên máy tính.
 Vì vậy, Java cung cấp các lớp trong gói &lt;code&gt;java.io&lt;/code&gt; để hỗ trợ làm việc với
@@ -35,9 +35,9 @@ tập tin và thư mục.&lt;/p&gt;
     </item>
     <item>
       <title>Đọc và ghi file văn bản trong Java</title>
-      <link>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-3/</link>
+      <link>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-3/</link>
       <pubDate>Sat, 06 Dec 2025 08:30:00 +0700</pubDate>
-      <guid>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-3/</guid>
+      <guid>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-3/</guid>
       <description>&lt;p&gt;Trong lập trình mạng, dữ liệu thường không chỉ được nhập trực tiếp từ bàn phím
 mà còn được lưu trữ dưới dạng các tập tin văn bản.
 Do đó, Java cung cấp các lớp hỗ trợ đọc và ghi file văn bản trong gói &lt;code&gt;java.io&lt;/code&gt;.&lt;/p&gt;
@@ -54,9 +54,9 @@ Lớp này cho phép ghi dữ liệu dạng ký tự vào file.&lt;/p&gt;</descr
     </item>
     <item>
       <title>Lập trình Multi Thread trong Java</title>
-      <link>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-6/</link>
+      <link>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-6/</link>
       <pubDate>Sun, 23 Nov 2025 09:15:00 +0700</pubDate>
-      <guid>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-6/</guid>
+      <guid>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-6/</guid>
       <description>&lt;p&gt;Multi thread là kỹ thuật cho phép chương trình chạy nhiều luồng
 cùng lúc để xử lý nhiều công việc song song.
 Trong lập trình mạng, multi thread được sử dụng phổ biến
@@ -68,9 +68,9 @@ Mỗi thread thực hiện một công việc riêng nhưng cùng chia sẻ tài
     </item>
     <item>
       <title>Đọc và ghi file nhị phân trong Java</title>
-      <link>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-4/</link>
+      <link>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-4/</link>
       <pubDate>Sat, 22 Nov 2025 08:45:00 +0700</pubDate>
-      <guid>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-4/</guid>
+      <guid>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-4/</guid>
       <description>&lt;p&gt;Ngoài file văn bản, Java còn hỗ trợ làm việc với file nhị phân.
 File nhị phân thường được dùng để lưu dữ liệu dạng số hoặc dữ liệu có cấu trúc,
 giúp việc lưu trữ và truyền dữ liệu chính xác hơn.&lt;/p&gt;
@@ -86,9 +86,9 @@ giúp việc lưu trữ và truyền dữ liệu chính xác hơn.&lt;/p&gt;
     </item>
     <item>
       <title>Truyền file giữa Client và Server trong Java</title>
-      <link>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-9/</link>
+      <link>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-9/</link>
       <pubDate>Fri, 24 Oct 2025 09:20:00 +0700</pubDate>
-      <guid>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-9/</guid>
+      <guid>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-9/</guid>
       <description>&lt;p&gt;Ứng dụng truyền file là một trong những bài thực hành quan trọng
 trong môn Lập trình mạng Java.
 Bài thực hành này giúp hiểu rõ cách sử dụng Socket để truyền dữ liệu
@@ -184,9 +184,9 @@ dưới dạng file giữa Client và Server.&lt;/p&gt;
     </item>
     <item>
       <title>Lập trình Single Thread trong Java</title>
-      <link>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-5/</link>
+      <link>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-5/</link>
       <pubDate>Sat, 11 Oct 2025 09:00:00 +0700</pubDate>
-      <guid>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-5/</guid>
+      <guid>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-5/</guid>
       <description>&lt;p&gt;Trong lập trình Java, thread (luồng) cho phép chương trình thực thi
 các công việc một cách độc lập với luồng chính.
 Thread là kiến thức quan trọng trong lập trình mạng, vì các chương trình
@@ -201,9 +201,9 @@ Mỗi chương trình Java khi chạy đều có ít nhất một thread,
     </item>
     <item>
       <title>Lập trình TCP Client và TCP Server trong Java</title>
-      <link>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-7/</link>
+      <link>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-7/</link>
       <pubDate>Mon, 06 Oct 2025 09:30:00 +0700</pubDate>
-      <guid>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-7/</guid>
+      <guid>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-7/</guid>
       <description>&lt;p&gt;Trong mô hình lập trình mạng TCP, &lt;strong&gt;Client&lt;/strong&gt; là phía khởi tạo kết nối đến Server.
 Client sử dụng lớp &lt;code&gt;Socket&lt;/code&gt; để kết nối đến địa chỉ IP và cổng (port) của Server.
 Dưới đây là các khái niệm.&lt;/p&gt;
@@ -220,9 +220,9 @@ thuộc gói &lt;code&gt;java.net&lt;/code&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Lập trình UDP với Datagram trong Java</title>
-      <link>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-8/</link>
+      <link>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-8/</link>
       <pubDate>Sat, 19 Jul 2025 10:00:00 +0700</pubDate>
-      <guid>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-8/</guid>
+      <guid>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-8/</guid>
       <description>&lt;p&gt;Trong lập trình mạng, UDP (User Datagram Protocol) là giao thức truyền dữ liệu
 không kết nối. UDP không đảm bảo độ tin cậy nhưng có tốc độ truyền nhanh.
 Java hỗ trợ UDP thông qua các lớp &lt;code&gt;DatagramSocket&lt;/code&gt; và &lt;code&gt;DatagramPacket&lt;/code&gt;
@@ -302,9 +302,9 @@ trong gói &lt;code&gt;java.net&lt;/code&gt;.&lt;/p&gt;
     </item>
     <item>
       <title>Tổng hợp mô hình Client – Server trong lập trình mạng Java</title>
-      <link>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-10/</link>
+      <link>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-10/</link>
       <pubDate>Fri, 07 Mar 2025 10:20:00 +0700</pubDate>
-      <guid>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-10/</guid>
+      <guid>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-10/</guid>
       <description>&lt;p&gt;Mô hình Client – Server là mô hình nền tảng trong lập trình mạng.
 Toàn bộ các bài thực hành trong môn Lập trình mạng Java
 đều xoay quanh mô hình này với hai giao thức chính là TCP và UDP.&lt;/p&gt;
@@ -358,16 +358,16 @@ Toàn bộ các bài thực hành trong môn Lập trình mạng Java
     </item>
     <item>
       <title>Giới Thiệu</title>
-      <link>http://localhost:1313/HuynhMinhPhu_Blog/about/</link>
+      <link>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/HuynhMinhPhu_Blog/about/</guid>
+      <guid>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/about/</guid>
       <description>Giới thiệu về Huỳnh Minh Phú - Kỹ sư An toàn thông tin tương lai</description>
     </item>
     <item>
       <title>Liên Hệ</title>
-      <link>http://localhost:1313/HuynhMinhPhu_Blog/contact/</link>
+      <link>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/contact/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/HuynhMinhPhu_Blog/contact/</guid>
+      <guid>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/contact/</guid>
       <description>Liên hệ với Huỳnh Minh Phú</description>
     </item>
   </channel>

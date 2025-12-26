@@ -2,87 +2,87 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tags on Huỳnh Minh Phú</title>
-    <link>http://localhost:1313/HuynhMinhPhu_Blog/tags/</link>
+    <link>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/tags/</link>
     <description>Recent content in Tags on Huỳnh Minh Phú</description>
     <generator>Hugo -- 0.153.2</generator>
     <language>vi</language>
     <lastBuildDate>Wed, 24 Dec 2025 08:00:00 +0700</lastBuildDate>
-    <atom:link href="http://localhost:1313/HuynhMinhPhu_Blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Java</title>
-      <link>http://localhost:1313/HuynhMinhPhu_Blog/tags/java/</link>
+      <link>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/tags/java/</link>
       <pubDate>Wed, 24 Dec 2025 08:00:00 +0700</pubDate>
-      <guid>http://localhost:1313/HuynhMinhPhu_Blog/tags/java/</guid>
+      <guid>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/tags/java/</guid>
       <description></description>
     </item>
     <item>
       <title>Network</title>
-      <link>http://localhost:1313/HuynhMinhPhu_Blog/tags/network/</link>
+      <link>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/tags/network/</link>
       <pubDate>Wed, 24 Dec 2025 08:00:00 +0700</pubDate>
-      <guid>http://localhost:1313/HuynhMinhPhu_Blog/tags/network/</guid>
+      <guid>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/tags/network/</guid>
       <description></description>
     </item>
     <item>
       <title>File</title>
-      <link>http://localhost:1313/HuynhMinhPhu_Blog/tags/file/</link>
+      <link>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/tags/file/</link>
       <pubDate>Mon, 15 Dec 2025 08:15:00 +0700</pubDate>
-      <guid>http://localhost:1313/HuynhMinhPhu_Blog/tags/file/</guid>
+      <guid>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/tags/file/</guid>
       <description></description>
     </item>
     <item>
       <title>IO</title>
-      <link>http://localhost:1313/HuynhMinhPhu_Blog/tags/io/</link>
+      <link>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/tags/io/</link>
       <pubDate>Mon, 15 Dec 2025 08:15:00 +0700</pubDate>
-      <guid>http://localhost:1313/HuynhMinhPhu_Blog/tags/io/</guid>
+      <guid>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/tags/io/</guid>
       <description></description>
     </item>
     <item>
       <title>Multithread</title>
-      <link>http://localhost:1313/HuynhMinhPhu_Blog/tags/multithread/</link>
+      <link>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/tags/multithread/</link>
       <pubDate>Sun, 23 Nov 2025 09:15:00 +0700</pubDate>
-      <guid>http://localhost:1313/HuynhMinhPhu_Blog/tags/multithread/</guid>
+      <guid>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/tags/multithread/</guid>
       <description></description>
     </item>
     <item>
       <title>Binary</title>
-      <link>http://localhost:1313/HuynhMinhPhu_Blog/tags/binary/</link>
+      <link>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/tags/binary/</link>
       <pubDate>Sat, 22 Nov 2025 08:45:00 +0700</pubDate>
-      <guid>http://localhost:1313/HuynhMinhPhu_Blog/tags/binary/</guid>
+      <guid>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/tags/binary/</guid>
       <description></description>
     </item>
     <item>
       <title>Socket</title>
-      <link>http://localhost:1313/HuynhMinhPhu_Blog/tags/socket/</link>
+      <link>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/tags/socket/</link>
       <pubDate>Fri, 24 Oct 2025 09:20:00 +0700</pubDate>
-      <guid>http://localhost:1313/HuynhMinhPhu_Blog/tags/socket/</guid>
+      <guid>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/tags/socket/</guid>
       <description></description>
     </item>
     <item>
       <title>Thread</title>
-      <link>http://localhost:1313/HuynhMinhPhu_Blog/tags/thread/</link>
+      <link>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/tags/thread/</link>
       <pubDate>Sat, 11 Oct 2025 09:00:00 +0700</pubDate>
-      <guid>http://localhost:1313/HuynhMinhPhu_Blog/tags/thread/</guid>
+      <guid>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/tags/thread/</guid>
       <description></description>
     </item>
     <item>
       <title>TCP</title>
-      <link>http://localhost:1313/HuynhMinhPhu_Blog/tags/tcp/</link>
+      <link>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/tags/tcp/</link>
       <pubDate>Mon, 06 Oct 2025 09:30:00 +0700</pubDate>
-      <guid>http://localhost:1313/HuynhMinhPhu_Blog/tags/tcp/</guid>
+      <guid>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/tags/tcp/</guid>
       <description></description>
     </item>
     <item>
       <title>UDP</title>
-      <link>http://localhost:1313/HuynhMinhPhu_Blog/tags/udp/</link>
+      <link>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/tags/udp/</link>
       <pubDate>Sat, 19 Jul 2025 10:00:00 +0700</pubDate>
-      <guid>http://localhost:1313/HuynhMinhPhu_Blog/tags/udp/</guid>
+      <guid>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/tags/udp/</guid>
       <description></description>
     </item>
     <item>
       <title>ClientServer</title>
-      <link>http://localhost:1313/HuynhMinhPhu_Blog/tags/clientserver/</link>
+      <link>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/tags/clientserver/</link>
       <pubDate>Fri, 07 Mar 2025 10:20:00 +0700</pubDate>
-      <guid>http://localhost:1313/HuynhMinhPhu_Blog/tags/clientserver/</guid>
+      <guid>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/tags/clientserver/</guid>
       <description></description>
     </item>
   </channel>

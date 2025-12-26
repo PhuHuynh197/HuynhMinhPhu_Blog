@@ -19,19 +19,19 @@ theme = "PaperMod"
   [[menu.main]]
     identifier = "posts"
     name = "Bài Viết"
-    url = "/posts/"        # Đã sửa: Thêm dấu / để link chuẩn
+    url = "/posts/"        
     weight = 20
 
   [[menu.main]]
     identifier = "about"
     name = "Giới Thiệu"
-    url = "/about/"        # Đã sửa
+    url = "/about/"       
     weight = 30
 
   [[menu.main]]
     identifier = "contact"
     name = "Liên Hệ"
-    url = "/contact/"      # Đã sửa
+    url = "/contact/"      
     weight = 40
 
   [[menu.main]]

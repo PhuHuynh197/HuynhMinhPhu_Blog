@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto" data-theme="light">
 
-<head><script src="/HuynhMinhPhu_Blog/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=HuynhMinhPhu_Blog/livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>Lập trình TCP Client và TCP Server trong Java | Huỳnh Minh Phú</title>
 <meta name="keywords" content="Java, Network, TCP">
 <meta name="description" content="Trong mô hình lập trình mạng TCP, Client là phía khởi tạo kết nối đến Server.
@@ -21,16 +21,16 @@ Nhận dữ liệu phản hồi từ Server
 Trong Java, TCP Client được xây dựng dựa trên lớp Socket
 thuộc gói java.net.">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-7/">
+<link rel="canonical" href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-7/">
 <link crossorigin="anonymous" href="/HuynhMinhPhu_Blog/assets/css/stylesheet.fd5566c526ae48aadabd950798a2dc3568536401560eae5caac3765a42a9e7b5.css" integrity="sha256-/VVmxSauSKravZUHmKLcNWhTZAFWDq5cqsN2WkKp57U=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/HuynhMinhPhu_Blog/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/HuynhMinhPhu_Blog/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/HuynhMinhPhu_Blog/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/HuynhMinhPhu_Blog/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:1313/HuynhMinhPhu_Blog/safari-pinned-tab.svg">
+<link rel="icon" href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/apple-touch-icon.png">
+<link rel="mask-icon" href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-7/">
+<link rel="alternate" hreflang="en" href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-7/">
 <noscript>
     <style>
         #theme-toggle,
@@ -45,13 +45,92 @@ thuộc gói java.net.">
         document.querySelector("html").dataset.theme = 'dark';
     }
 
+</script><meta property="og:url" content="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-7/">
+  <meta property="og:site_name" content="Huỳnh Minh Phú">
+  <meta property="og:title" content="Lập trình TCP Client và TCP Server trong Java">
+  <meta property="og:description" content="Trong mô hình lập trình mạng TCP, Client là phía khởi tạo kết nối đến Server. Client sử dụng lớp Socket để kết nối đến địa chỉ IP và cổng (port) của Server. Dưới đây là các khái niệm.
+1. Khái niệm TCP Client TCP Client chịu trách nhiệm:
+Kết nối đến TCP Server Gửi dữ liệu đến Server Nhận dữ liệu phản hồi từ Server Trong Java, TCP Client được xây dựng dựa trên lớp Socket thuộc gói java.net.">
+  <meta property="og:locale" content="vi">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-10-06T09:30:00+07:00">
+    <meta property="article:modified_time" content="2025-10-06T09:30:00+07:00">
+    <meta property="article:tag" content="Java">
+    <meta property="article:tag" content="Network">
+    <meta property="article:tag" content="TCP">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Lập trình TCP Client và TCP Server trong Java">
+<meta name="twitter:description" content="Trong mô hình lập trình mạng TCP, Client là phía khởi tạo kết nối đến Server.
+Client sử dụng lớp Socket để kết nối đến địa chỉ IP và cổng (port) của Server.
+Dưới đây là các khái niệm.
+
+1. Khái niệm TCP Client
+TCP Client chịu trách nhiệm:
+
+Kết nối đến TCP Server
+Gửi dữ liệu đến Server
+Nhận dữ liệu phản hồi từ Server
+
+Trong Java, TCP Client được xây dựng dựa trên lớp Socket
+thuộc gói java.net.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Lập trình TCP Client và TCP Server trong Java",
+      "item": "https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-7/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Lập trình TCP Client và TCP Server trong Java",
+  "name": "Lập trình TCP Client và TCP Server trong Java",
+  "description": "Trong mô hình lập trình mạng TCP, Client là phía khởi tạo kết nối đến Server. Client sử dụng lớp Socket để kết nối đến địa chỉ IP và cổng (port) của Server. Dưới đây là các khái niệm.\n1. Khái niệm TCP Client TCP Client chịu trách nhiệm:\nKết nối đến TCP Server Gửi dữ liệu đến Server Nhận dữ liệu phản hồi từ Server Trong Java, TCP Client được xây dựng dựa trên lớp Socket thuộc gói java.net.\n",
+  "keywords": [
+    "Java", "Network", "TCP"
+  ],
+  "articleBody": "Trong mô hình lập trình mạng TCP, Client là phía khởi tạo kết nối đến Server. Client sử dụng lớp Socket để kết nối đến địa chỉ IP và cổng (port) của Server. Dưới đây là các khái niệm.\n1. Khái niệm TCP Client TCP Client chịu trách nhiệm:\nKết nối đến TCP Server Gửi dữ liệu đến Server Nhận dữ liệu phản hồi từ Server Trong Java, TCP Client được xây dựng dựa trên lớp Socket thuộc gói java.net.\n2. Tạo kết nối TCP Client Client cần biết:\nĐịa chỉ IP của Server Số cổng mà Server đang lắng nghe 3. Ví dụ chương trình TCP Client import java.io.DataInputStream; import java.io.DataOutputStream; import java.net.Socket; public class TCPClient { public static void main(String[] args) { try { // Tạo kết nối đến Server Socket socket = new Socket(\"localhost\", 1234); // Tạo luồng gửi dữ liệu DataOutputStream dos = new DataOutputStream(socket.getOutputStream()); // Tạo luồng nhận dữ liệu DataInputStream dis = new DataInputStream(socket.getInputStream()); // Gửi dữ liệu đến Server dos.writeUTF(\"Hello Server\"); // Nhận phản hồi từ Server String response = dis.readUTF(); System.out.println(\"Server response: \" + response); // Đóng kết nối socket.close(); } catch (Exception e) { e.printStackTrace(); } } } 4. Ý nghĩa chương trình Socket(host, port) tạo kết nối TCP đến Server\nDataOutputStream dùng để gửi dữ liệu\nDataInputStream dùng để nhận dữ liệu\nTCP đảm bảo dữ liệu truyền đi chính xác và đầy đủ\nTCP Client thường được dùng trong các bài thực hành kết nối và trao đổi dữ liệu giữa hai máy.\nTrong mô hình TCP, Server là phía lắng nghe và chấp nhận kết nối từ các Client. Server sử dụng lớp ServerSocket để mở cổng và chờ Client kết nối.\n5. Khái niệm TCP Server TCP Server có nhiệm vụ:\nMở cổng chờ kết nối Nhận dữ liệu từ Client Xử lý và phản hồi dữ liệu 6. Tạo TCP Server trong Java TCP Server sử dụng lớp ServerSocket thuộc gói java.net.\n7. Ví dụ chương trình TCP Server import java.io.DataInputStream; import java.io.DataOutputStream; import java.net.ServerSocket; import java.net.Socket; public class TCPServer { public static void main(String[] args) { try { // Tạo ServerSocket lắng nghe tại cổng 1234 ServerSocket serverSocket = new ServerSocket(1234); System.out.println(\"Server dang cho ket noi...\"); // Chấp nhận kết nối từ Client Socket socket = serverSocket.accept(); System.out.println(\"Client da ket noi\"); // Tạo luồng nhận dữ liệu DataInputStream dis = new DataInputStream(socket.getInputStream()); // Tạo luồng gửi dữ liệu DataOutputStream dos = new DataOutputStream(socket.getOutputStream()); // Nhận dữ liệu từ Client String message = dis.readUTF(); System.out.println(\"Client gui: \" + message); // Gửi phản hồi lại cho Client dos.writeUTF(\"Hello Client\"); // Đóng kết nối socket.close(); serverSocket.close(); } catch (Exception e) { e.printStackTrace(); } } } ",
+  "wordCount" : "447",
+  "inLanguage": "en",
+  "datePublished": "2025-10-06T09:30:00+07:00",
+  "dateModified": "2025-10-06T09:30:00+07:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-7/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Huỳnh Minh Phú",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/favicon.ico"
+    }
+  }
+}
 </script>
 </head>
 <body id="top">
     <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/HuynhMinhPhu_Blog/" accesskey="h" title="Huỳnh Minh Phú (Alt + H)">Huỳnh Minh Phú</a>
+            <a href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/" accesskey="h" title="Huỳnh Minh Phú (Alt + H)">Huỳnh Minh Phú</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -77,22 +156,22 @@ thuộc gói java.net.">
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:1313/HuynhMinhPhu_Blog/" title="Trang Chủ">
+                <a href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/" title="Trang Chủ">
                     <span>Trang Chủ</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/HuynhMinhPhu_Blog/posts/" title="Bài Viết">
+                <a href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/" title="Bài Viết">
                     <span>Bài Viết</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/HuynhMinhPhu_Blog/about/" title="Giới Thiệu">
+                <a href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/about/" title="Giới Thiệu">
                     <span>Giới Thiệu</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/HuynhMinhPhu_Blog/contact/" title="Liên Hệ">
+                <a href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/contact/" title="Liên Hệ">
                     <span>Liên Hệ</span>
                 </a>
             </li>
@@ -532,7 +611,7 @@ thuộc gói <code>java.net</code>.</p>
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="http://localhost:1313/HuynhMinhPhu_Blog/">Huỳnh Minh Phú</a></span> · 
+        <span>&copy; 2025 <a href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/">Huỳnh Minh Phú</a></span> · 
 
     <span>
         Powered by
