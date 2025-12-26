@@ -1,436 +1,289 @@
 <!DOCTYPE html>
-<html lang="en" dir="auto" data-theme="light">
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lập trình Multi Thread trong Java | Huỳnh Minh Phú</title>
+    <link rel="icon" href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/favicon.ico">
 
-<head><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
-<title>Lập trình Multi Thread trong Java | Huỳnh Minh Phú</title>
-<meta name="keywords" content="Java, Multithread">
-<meta name="description" content="Multi thread là kỹ thuật cho phép chương trình chạy nhiều luồng
-cùng lúc để xử lý nhiều công việc song song.
-Trong lập trình mạng, multi thread được sử dụng phổ biến
-để server có thể phục vụ nhiều client đồng thời.
-
-1. Khái niệm Multi Thread
-Multi thread là việc tạo và quản lý nhiều thread trong cùng một chương trình.
-Mỗi thread thực hiện một công việc riêng nhưng cùng chia sẻ tài nguyên hệ thống.">
-<meta name="author" content="">
-<link rel="canonical" href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-6/">
-<link crossorigin="anonymous" href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/assets/css/stylesheet.fd5566c526ae48aadabd950798a2dc3568536401560eae5caac3765a42a9e7b5.css" integrity="sha256-/VVmxSauSKravZUHmKLcNWhTZAFWDq5cqsN2WkKp57U=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/apple-touch-icon.png">
-<link rel="mask-icon" href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/safari-pinned-tab.svg">
-<meta name="theme-color" content="#2e2e33">
-<meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-6/">
-<noscript>
     <style>
-        #theme-toggle,
-        .top-link {
-            display: none;
+         
+        * { box-sizing: border-box; }
+
+        html, body { 
+            margin: 0; padding: 0; width: 100%; 
+            background-color: #f0f9ff;  
+             
+            background-image: radial-gradient(#bae6fd 1px, transparent 1px);
+            background-size: 24px 24px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: #334155; 
+            overflow-x: hidden;
+        }
+        :root {
+            --primary: #0284c7;
+            --primary-dark: #0369a1;
+            --primary-light: #e0f2fe;
+            --dark: #1e293b;
+            --text: #334155;
+            --text-light: #64748b;
+            --footer-bg: #0f172a;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --shadow-card: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
         }
 
+         
+        .main-header { 
+            position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+            background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .header-container { 
+            max-width: 1200px; margin: 0 auto; padding: 12px 25px;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .logo { font-size: 1.5rem; font-weight: 900; text-decoration: none; color: var(--dark); letter-spacing: -1px; }
+        .logo span { color: var(--primary); }
+        
+        .nav-menu { display: flex; gap: 25px; }
+        .nav-link { color: var(--text-light); text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: 0.3s; }
+        .nav-link:hover, .nav-link.active { color: var(--primary); }
+        
+        .git-btn {
+            background: var(--dark); color: #fff; padding: 8px 20px; border-radius: 8px;
+            text-decoration: none; font-weight: 700; transition: 0.3s; font-size: 0.9rem;
+        }
+        .git-btn:hover { background: var(--primary); transform: translateY(-2px); }
+
+         
+        .post-wrapper { 
+            max-width: 850px; 
+            margin: 120px auto 80px; 
+            padding: 50px; 
+            background: rgba(255, 255, 255, 0.95);  
+            border-radius: 24px;
+            box-shadow: var(--shadow-card);
+            border: 1px solid rgba(255,255,255,1);
+            position: relative;
+            animation: fadeUp 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+         
+        .post-top-nav { margin-bottom: 40px; }
+        .back-link-top {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: var(--text-light); text-decoration: none; font-weight: 700; font-size: 0.9rem;
+            transition: var(--transition);
+            background: #fff; padding: 8px 16px; border-radius: 50px;
+            border: 1px solid #e2e8f0;
+        }
+        .back-link-top:hover { 
+            color: var(--primary); border-color: var(--primary);
+            transform: translateX(-5px); box-shadow: 0 5px 15px rgba(2, 132, 199, 0.15);
+        }
+        .back-link-top svg { width: 18px; height: 18px; stroke-width: 2.5; }
+
+         
+        .post-header { 
+            text-align: center; 
+            margin-bottom: 50px; 
+            padding-bottom: 40px; 
+            border-bottom: 1px dashed #cbd5e1; 
+        }
+        
+        .post-tag { 
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), #3b82f6); 
+            color: #fff; 
+            font-weight: 800; 
+            font-size: 0.85rem; 
+            text-transform: uppercase; 
+            padding: 8px 20px;
+            border-radius: 50px;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 20px -5px rgba(2, 132, 199, 0.4);
+        }
+        
+        .post-title { 
+            font-size: 2.8rem; 
+            font-weight: 900; 
+            line-height: 1.25; 
+            margin-bottom: 25px; 
+            letter-spacing: -1px;
+            background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .post-meta { 
+            display: inline-flex;
+            align-items: center; justify-content: center; gap: 25px;
+            background: #f8fafc;
+            padding: 10px 25px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            color: var(--text-light); 
+            font-size: 0.95rem; 
+            font-weight: 600;
+        }
+        .post-meta span { display: flex; align-items: center; gap: 8px; }
+
+         
+        .post-content { 
+            line-height: 1.85; 
+            font-size: 1.15rem; 
+            color: #334155;
+        }
+        
+        .post-content h2 { 
+            font-size: 1.8rem; font-weight: 800; color: var(--dark); 
+            margin: 50px 0 20px; position: relative; padding-left: 15px;
+            border-left: 5px solid var(--primary);
+        }
+        .post-content h3 { font-size: 1.4rem; font-weight: 700; color: var(--dark); margin: 35px 0 15px; }
+        
+        .post-content p { margin-bottom: 1.6em; }
+        .post-content ul, .post-content ol { margin-bottom: 1.6em; padding-left: 1.5em; }
+        .post-content li { margin-bottom: 0.6em; }
+        
+        .post-content a { 
+            color: var(--primary); text-decoration: none; 
+            border-bottom: 2px solid var(--primary-light);
+            font-weight: 600; transition: 0.2s; 
+        }
+        .post-content a:hover { 
+            color: var(--primary-dark); 
+            border-bottom-color: var(--primary); 
+            background: var(--primary-light);
+        }
+
+         
+        .post-content pre {
+            background: #0f172a;  
+            color: #e2e8f0; 
+            padding: 25px; 
+            border-radius: 16px;
+            overflow-x: auto; 
+            margin: 35px 0; 
+            font-size: 0.95rem;
+            line-height: 1.6;
+            border: 1px solid #334155;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        .post-content code { font-family: 'Consolas', 'Monaco', monospace; }
+        
+         
+        .post-content p code {
+            background: #f1f5f9; color: #ef4444; padding: 3px 8px;
+            border-radius: 6px; font-size: 0.9em; border: 1px solid #e2e8f0;
+            font-weight: 600; box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+         
+        .post-content img {
+            max-width: 100%; height: auto; border-radius: 16px;
+            margin: 40px auto; display: block;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border: 1px solid #f1f5f9;
+        }
+
+         
+        .back-btn-wrapper { margin-top: 60px; text-align: center; border-top: 1px solid #e2e8f0; padding-top: 40px; }
+        .back-btn {
+            display: inline-flex; align-items: center; gap: 10px;
+            color: #fff; font-weight: 700; text-decoration: none; 
+            padding: 14px 35px; border-radius: 50px; 
+            background: linear-gradient(135deg, var(--dark), #334155);
+            transition: 0.3s; font-size: 1rem;
+            box-shadow: 0 10px 20px rgba(30, 41, 59, 0.2);
+        }
+        .back-btn:hover { 
+            transform: translateY(-3px); 
+            background: linear-gradient(135deg, var(--primary), #2563eb);
+            box-shadow: 0 15px 30px rgba(2, 132, 199, 0.3); 
+        }
+
+         
+        .site-footer { 
+            background-color: var(--footer-bg); color: #cbd5e1; 
+            padding: 30px 0 15px; 
+            width: 100%; margin-top: 80px;
+        }
+        .footer-container { max-width: 1200px; margin: 0 auto; padding: 0 25px; display: flex; justify-content: space-between; align-items: flex-start; gap: 30px; flex-wrap: wrap; }
+        .footer-brand { flex: 2; min-width: 280px; }
+        .footer-links { flex: 1; min-width: 150px; }
+        .footer-contact { flex: 1.5; min-width: 250px; text-align: right; }
+        .footer-logo { font-size: 1.6rem; font-weight: 900; color: #fff; margin-bottom: 10px; display: block; text-decoration: none; }
+        .footer-logo span { color: var(--primary); }
+        .footer-brand p { font-size: 0.85rem; line-height: 1.6; color: #94a3b8; max-width: 380px; margin: 0; }
+        .footer-links h4, .footer-contact h4 { color: #fff; margin-bottom: 15px; font-weight: 800; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; }
+        .footer-links ul { list-style: none; padding: 0; margin: 0; }
+        .footer-links li { margin-bottom: 8px; }
+        .footer-links a { color: #94a3b8; text-decoration: none; transition: 0.3s; font-size: 0.85rem; }
+        .footer-links a:hover { color: var(--primary); padding-left: 5px; }
+        .contact-item { margin-bottom: 8px; font-size: 0.85rem; color: #cbd5e1; }
+        .social-icons { display: flex; gap: 12px; margin-top: 15px; justify-content: flex-end; }
+        .social-link { padding: 6px 14px; border-radius: 10px; color: #fff; text-decoration: none; font-weight: 700; font-size: 0.75rem; transition: 0.3s; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .social-link:hover { transform: translateY(-3px); background: var(--primary); border-color: var(--primary); }
+        .footer-bottom { max-width: 1200px; margin: 20px auto 0; padding: 15px 25px 0; border-top: 1px solid rgba(255, 255, 255, 0.05); text-align: center; color: #64748b; font-size: 0.8rem; }
+
+         
+        @media (max-width: 900px) {
+            .footer-container { flex-direction: column; text-align: center; }
+            .footer-contact { text-align: center; width: 100%; }
+            .social-icons { justify-content: center; }
+            .nav-menu { display: none; }
+            
+            .post-wrapper { padding: 30px 20px; margin-top: 100px; width: 95%; margin-left: auto; margin-right: auto; }
+            .post-title { font-size: 2rem; }
+        }
     </style>
-</noscript>
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.querySelector("html").dataset.theme = 'dark';
-    }
-
-</script><meta property="og:url" content="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-6/">
-  <meta property="og:site_name" content="Huỳnh Minh Phú">
-  <meta property="og:title" content="Lập trình Multi Thread trong Java">
-  <meta property="og:description" content="Multi thread là kỹ thuật cho phép chương trình chạy nhiều luồng cùng lúc để xử lý nhiều công việc song song. Trong lập trình mạng, multi thread được sử dụng phổ biến để server có thể phục vụ nhiều client đồng thời.
-1. Khái niệm Multi Thread Multi thread là việc tạo và quản lý nhiều thread trong cùng một chương trình. Mỗi thread thực hiện một công việc riêng nhưng cùng chia sẻ tài nguyên hệ thống.">
-  <meta property="og:locale" content="vi">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-11-23T09:15:00+07:00">
-    <meta property="article:modified_time" content="2025-11-23T09:15:00+07:00">
-    <meta property="article:tag" content="Java">
-    <meta property="article:tag" content="Multithread">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Lập trình Multi Thread trong Java">
-<meta name="twitter:description" content="Multi thread là kỹ thuật cho phép chương trình chạy nhiều luồng
-cùng lúc để xử lý nhiều công việc song song.
-Trong lập trình mạng, multi thread được sử dụng phổ biến
-để server có thể phục vụ nhiều client đồng thời.
-
-1. Khái niệm Multi Thread
-Multi thread là việc tạo và quản lý nhiều thread trong cùng một chương trình.
-Mỗi thread thực hiện một công việc riêng nhưng cùng chia sẻ tài nguyên hệ thống.">
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "Lập trình Multi Thread trong Java",
-      "item": "https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-6/"
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Lập trình Multi Thread trong Java",
-  "name": "Lập trình Multi Thread trong Java",
-  "description": "Multi thread là kỹ thuật cho phép chương trình chạy nhiều luồng cùng lúc để xử lý nhiều công việc song song. Trong lập trình mạng, multi thread được sử dụng phổ biến để server có thể phục vụ nhiều client đồng thời.\n1. Khái niệm Multi Thread Multi thread là việc tạo và quản lý nhiều thread trong cùng một chương trình. Mỗi thread thực hiện một công việc riêng nhưng cùng chia sẻ tài nguyên hệ thống.\n",
-  "keywords": [
-    "Java", "Multithread"
-  ],
-  "articleBody": "Multi thread là kỹ thuật cho phép chương trình chạy nhiều luồng cùng lúc để xử lý nhiều công việc song song. Trong lập trình mạng, multi thread được sử dụng phổ biến để server có thể phục vụ nhiều client đồng thời.\n1. Khái niệm Multi Thread Multi thread là việc tạo và quản lý nhiều thread trong cùng một chương trình. Mỗi thread thực hiện một công việc riêng nhưng cùng chia sẻ tài nguyên hệ thống.\nViệc sử dụng multi thread giúp:\nTăng hiệu suất chương trình Tránh tình trạng chương trình bị treo Xử lý đồng thời nhiều yêu cầu từ client 2. Tạo nhiều thread trong Java Java cho phép tạo nhiều thread bằng cách khởi tạo nhiều đối tượng kế thừa từ lớp Thread.\nVí dụ Multi Thread đơn giản class MyThread extends Thread { private String name; public MyThread(String name) { this.name = name; } public void run() { System.out.println(\"Thread dang chay: \" + name); } } public class MultiThreadDemo { public static void main(String[] args) { MyThread t1 = new MyThread(\"Thread 1\"); MyThread t2 = new MyThread(\"Thread 2\"); MyThread t3 = new MyThread(\"Thread 3\"); t1.start(); t2.start(); t3.start(); } } 3. Giải thích chương trình Mỗi đối tượng MyThread đại diện cho một thread riêng biệt.\nKhi gọi start(), Java sẽ tạo luồng mới và chạy phương thức run().\nCác thread có thể chạy song song, không theo thứ tự cố định.\nThứ tự in ra kết quả có thể khác nhau mỗi lần chạy chương trình.\n4. So sánh Single Thread và Multi Thread Single Thread\nChỉ xử lý một công việc tại một thời điểm -Phù hợp với chương trình đơn giản\nMulti Thread\nXử lý nhiều công việc đồng thời\nPhù hợp với server và ứng dụng mạng\n",
-  "wordCount" : "298",
-  "inLanguage": "en",
-  "datePublished": "2025-11-23T09:15:00+07:00",
-  "dateModified": "2025-11-23T09:15:00+07:00",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-6/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Huỳnh Minh Phú",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/favicon.ico"
-    }
-  }
-}
-</script>
 </head>
-<body id="top">
-    <header class="header">
-    <nav class="nav">
-        <div class="logo">
-            <a href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/" accesskey="h" title="Huỳnh Minh Phú (Alt + H)">Huỳnh Minh Phú</a>
-            <div class="logo-switches">
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
-                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button>
+<body>
+
+    <header class="main-header">
+        <div class="header-container">
+            <a href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/" class="logo">
+                <span class="logo-icon"></span> PHU.<span>DEV</span>
+            </a>
+            <nav class="nav-menu">
+                <a href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/" class="nav-link">Trang Chủ</a>
+                <a href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts" class="nav-link active">Bài Viết</a>
+                <a href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/about" class="nav-link">Giới Thiệu</a>
+                <a href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/contact" class="nav-link">Liên Hệ</a>
+                <a href="https://drive.google.com/file/d/1RgnPTwcMSXdgxbAq8_djPUjEExtqdqtP/view?usp=drive_link" class="nav-link" target="_blank">CV</a>
+            </nav>
+            <div class="header-cta">
+                <a href="https://github.com/PhuHuynh197" target="_blank" class="git-btn">GitHub</a>
             </div>
-        </div>
-        <ul id="menu">
-            <li>
-                <a href="https://PhuHuynh197.github.io/" title="Trang Chủ">
-                    <span>Trang Chủ</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://PhuHuynh197.github.io/posts/" title="Bài Viết">
-                    <span>Bài Viết</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://PhuHuynh197.github.io/about/" title="Giới Thiệu">
-                    <span>Giới Thiệu</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://PhuHuynh197.github.io/contact/" title="Liên Hệ">
-                    <span>Liên Hệ</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://drive.google.com/file/d/1RgnPTwcMSXdgxbAq8_djPUjEExtqdqtP/view?usp=drive_link" title="CV">
-                    <span>CV</span>&nbsp;
-                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
-                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
-                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
-                        <path d="M15 3h6v6"></path>
-                        <path d="M10 14L21 3"></path>
-                    </svg>
-                </a>
-            </li>
-        </ul>
-    </nav>
-</header>
-<main class="main">
-
-<header class="main-header">
-    <div class="header-container">
-        <a href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/" class="logo">
-            <span class="logo-icon"></span> PHU.<span>DEV</span>
-        </a>
-        <nav class="nav-menu">
-            <a href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/" class="nav-link">Trang Chủ</a>
-            <a href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts" class="nav-link active">Bài Viết</a>
-            <a href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/about" class="nav-link">Giới Thiệu</a>
-            <a href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/contact" class="nav-link">Liên Hệ</a>
-            <a href="https://drive.google.com/file/d/1RgnPTwcMSXdgxbAq8_djPUjEExtqdqtP/view?usp=drive_link" class="nav-link" target="_blank">CV</a>
-        </nav>
-        <div class="header-cta">
-            <a href="https://github.com/PhuHuynh197" target="_blank" class="git-btn">GitHub</a>
-        </div>
-    </div>
-</header>
-
-<style>
-     
-    html, body { 
-        margin: 0; padding: 0; overflow-x: hidden; width: 100%; 
-        background-color: #f8fafc; 
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        color: #334155; 
-    }
-    :root {
-        --primary: #0284c7; --primary-light: #e0f2fe; --dark: #0f172a; --text: #334155; --text-light: #64748b;
-        --footer-bg: #0f172a; --transition: all 0.3s ease;
-    }
-
-     
-    .main-header { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(15px); border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
-    .header-container { max-width: 1200px; margin: 0 auto; padding: 12px 25px; display: flex; justify-content: space-between; align-items: center; }
-    .logo { font-size: 1.5rem; font-weight: 900; text-decoration: none; color: var(--dark); letter-spacing: -1px; }
-    .logo span { color: var(--primary); }
-    .nav-menu { display: flex; gap: 25px; }
-    .nav-link { color: var(--text-light); text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: 0.3s; }
-    .nav-link:hover, .nav-link.active { color: var(--primary); }
-    .git-btn { background: var(--dark); color: #fff; padding: 8px 20px; border-radius: 8px; text-decoration: none; font-weight: 700; transition: 0.3s; font-size: 0.9rem; }
-    .git-btn:hover { background: var(--primary); transform: translateY(-2px); }
-
-     
-    .post-wrapper { 
-        max-width: 800px; 
-         
-        margin: 80px auto 80px; 
-         
-        padding: 30px 40px; 
-        background: #fff;
-        border-radius: 24px;
-        box-shadow: 0 20px 40px rgba(0,0,0,0.04); 
-        border: 1px solid rgba(0,0,0,0.02);
-    }
-
-     
-    .post-top-nav {
-         
-        margin-bottom: 20px; 
-    }
-    .back-link-top {
-        display: inline-flex; align-items: center; gap: 8px;
-        color: var(--text-light); text-decoration: none; font-weight: 600; font-size: 0.9rem;
-        transition: var(--transition);
-    }
-    .back-link-top:hover { color: var(--primary); transform: translateX(-5px); }
-    .back-link-top svg { width: 18px; height: 18px; stroke-width: 2.5; }
-
-     
-    .post-header { 
-        text-align: center; 
-        margin-bottom: 50px; 
-        padding-bottom: 30px; 
-        border-bottom: 1px dashed #cbd5e1; 
-    }
-    
-    .post-tag { 
-        display: inline-block;
-        background: linear-gradient(135deg, var(--primary), #3b82f6); 
-        color: #fff; 
-        font-weight: 700; 
-        font-size: 0.8rem; 
-        text-transform: uppercase; 
-        padding: 8px 20px;
-        border-radius: 50px;
-        margin-bottom: 20px;  
-        letter-spacing: 1.5px;
-        box-shadow: 0 6px 15px rgba(2, 132, 199, 0.25); 
-    }
-    
-    .post-title { 
-        font-size: 2.8rem; 
-        font-weight: 900; 
-        color: var(--dark); 
-        line-height: 1.2; 
-        margin-bottom: 20px; 
-        letter-spacing: -1px;
-    }
-    
-    .post-meta { 
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 20px;
-        background: #f8fafc;
-        padding: 8px 20px;
-        border-radius: 12px;
-        border: 1px solid #e2e8f0;
-        color: var(--text-light); 
-        font-size: 0.9rem; 
-        font-weight: 600;
-    }
-    .post-meta span { display: flex; align-items: center; gap: 8px; }
-
-     
-    .post-content { 
-        line-height: 1.85; 
-        font-size: 1.125rem; 
-        color: var(--text);
-    }
-    
-    .post-content h2 { 
-        font-size: 2rem; font-weight: 800; color: var(--dark); margin: 50px 0 20px; letter-spacing: -0.02em;
-    }
-    .post-content h3 { 
-        font-size: 1.5rem; font-weight: 700; color: var(--dark); margin: 40px 0 20px; 
-    }
-    .post-content h4 { 
-        font-size: 1.25rem; font-weight: 700; color: var(--dark); margin: 30px 0 15px; 
-    }
-    
-    .post-content p { margin-bottom: 1.8em; }
-    .post-content ul, .post-content ol { margin-bottom: 1.8em; padding-left: 1.5em; }
-    .post-content li { margin-bottom: 0.8em; }
-    
-    .post-content a { color: var(--primary); text-decoration: underline; text-underline-offset: 4px; font-weight: 600; transition: 0.2s; }
-    .post-content a:hover { color: var(--dark); background: var(--primary-light); text-decoration: none; }
-
-     
-    .post-content pre {
-        background: #1e293b !important; 
-        color: #e2e8f0; 
-        padding: 25px; 
-        border-radius: 16px;
-        overflow-x: auto; 
-        margin: 35px 0; 
-        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        border: 1px solid #334155;
-        font-size: 0.95rem;
-        line-height: 1.7;
-    }
-    .post-content code { font-family: 'Fira Code', 'Consolas', monospace; }
-    
-    .post-content p code, .post-content li code {
-        background: #f1f5f9;
-        color: #ef4444; 
-        padding: 4px 8px;
-        border-radius: 6px;
-        font-size: 0.9em;
-        border: 1px solid #e2e8f0;
-        font-weight: 600;
-        font-family: 'Fira Code', monospace;
-    }
-
-     
-    .post-content blockquote {
-        border-left: 4px solid var(--primary);
-        background: #f8fafc;
-        margin: 35px 0;
-        padding: 20px 30px;
-        font-style: italic;
-        color: #5b6b83;
-        border-radius: 0 16px 16px 0;
-        font-size: 1.1rem;
-    }
-
-     
-    .post-content img {
-        max-width: 100%;
-        height: auto;
-        border-radius: 16px;
-        margin: 30px 0;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-     
-    .back-btn-wrapper { margin-top: 60px; text-align: center; border-top: 1px solid #f1f5f9; padding-top: 40px; }
-    .back-btn {
-        display: inline-flex; align-items: center; gap: 10px;
-        color: var(--dark); font-weight: 700; text-decoration: none; 
-        padding: 12px 30px; border-radius: 50px; background: #f1f5f9;
-        transition: 0.3s; font-size: 1rem;
-    }
-    .back-btn:hover { background: var(--primary); color: #fff; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(2,132,199,0.2); }
-
-     
-    .site-footer { background-color: var(--footer-bg); color: #cbd5e1; padding: 80px 0 30px; margin-top: 0; width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; }
-    .footer-container { max-width: 1200px; margin: 0 auto; padding: 0 25px; display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; flex-wrap: wrap; }
-    .footer-brand { flex: 2; min-width: 300px; }
-    .footer-links { flex: 1; min-width: 150px; }
-    .footer-contact { flex: 1.5; min-width: 250px; text-align: right; }
-    .footer-logo { font-size: 1.8rem; font-weight: 900; color: #fff; margin-bottom: 20px; }
-    .footer-logo span { color: var(--primary); }
-    .footer-brand p { font-size: 0.95rem; line-height: 1.7; color: #94a3b8; max-width: 400px; }
-    .footer-links h4, .footer-contact h4 { color: #fff; margin-bottom: 25px; font-weight: 800; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; }
-    .footer-links ul { list-style: none; padding: 0; }
-    .footer-links li { margin-bottom: 12px; }
-    .footer-links a { color: #94a3b8; text-decoration: none; transition: 0.3s; }
-    .footer-links a:hover { color: var(--primary); padding-left: 5px; }
-    .contact-item { margin-bottom: 12px; font-size: 0.9rem; color: #cbd5e1; }
-    .social-icons { display: flex; gap: 15px; margin-top: 25px; justify-content: flex-end; }
-    .social-link { padding: 10px 20px; border-radius: 12px; color: #fff; text-decoration: none; font-weight: 700; font-size: 0.85rem; transition: 0.3s; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); }
-    .social-link.fb { background: #1877f2; border: none; }
-    .social-link.gh { background: #333; border: none; }
-    .social-link:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
-    .footer-bottom { max-width: 1200px; margin: 60px auto 0; padding: 30px 25px 0; border-top: 1px solid rgba(255, 255, 255, 0.05); text-align: center; color: #64748b; font-size: 0.85rem; }
-
-     
-    @media (max-width: 900px) {
-        .footer-container { grid-template-columns: 1fr; text-align: center; gap: 40px; }
-        .social-icons { justify-content: center; }
-        .footer-contact { text-align: center; }
-        .nav-menu { display: none; }
-        .post-wrapper { padding: 30px 25px; margin-top: 100px; border-radius: 0; box-shadow: none; border: none; }
-        .post-title { font-size: 2.2rem; }
-        .post-content { font-size: 1.05rem; }
-    }
-    .footer { display: none !important; }
-</style>
-
-<article class="post-wrapper">
-    <div class="post-top-nav">
-        <a href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts" class="back-link-top">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
-            Quay lại
-        </a>
-    </div>
-
-    <header class="post-header">
-        <span class="post-tag">Java</span>
-        <h1 class="post-title">Lập trình Multi Thread trong Java</h1>
-        <div class="post-meta">
-            <span>📅 23/11/2025</span>
-            <span>⏱️ 2 phút đọc</span>
         </div>
     </header>
 
-    <div class="post-content">
-        <p>Multi thread là kỹ thuật cho phép chương trình chạy nhiều luồng
+    <article class="post-wrapper">
+        <div class="post-top-nav">
+            <a href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts" class="back-link-top">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+                Quay lại danh sách
+            </a>
+        </div>
+
+        <header class="post-header">
+            <span class="post-tag">Java</span>
+            <h1 class="post-title">Lập trình Multi Thread trong Java</h1>
+            <div class="post-meta">
+                <span>📅 23/11/2025</span>
+                <span>⏱️ 2 phút đọc</span>
+            </div>
+        </header>
+
+        <div class="post-content">
+            <p>Multi thread là kỹ thuật cho phép chương trình chạy nhiều luồng
 cùng lúc để xử lý nhiều công việc song song.
 Trong lập trình mạng, multi thread được sử dụng phổ biến
 để server có thể phục vụ nhiều client đồng thời.</p>
@@ -509,120 +362,41 @@ nhiều đối tượng kế thừa từ lớp <code>Thread</code>.</p>
 </li>
 </ul>
 
-    </div>
-    
-    <div class="back-btn-wrapper">
-        <a href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts" class="back-btn">← Quay lại danh sách bài viết</a>
-    </div>
-</article>
+        </div>
+        
+        <div class="back-btn-wrapper">
+            <a href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts" class="back-btn">← Quay lại danh sách bài viết</a>
+        </div>
+    </article>
 
-<footer class="site-footer">
-    <div class="footer-container">
-        <div class="footer-brand">
-            <h3 class="footer-logo">Huỳnh Minh <span>Phú</span></h3>
-            <p>Chia sẻ kiến thức về lập trình Java và JavaScript. Nơi học hỏi và phát triển kỹ năng lập trình mạng cùng cộng đồng sinh viên HUTECH.</p>
-        </div>
-        <div class="footer-links">
-            <h4>Liên kết nhanh</h4>
-            <ul>
-                <li><a href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/" class="nav-link">Trang Chủ</a></li>
-                <li><a href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts">Bài viết</a></li>
-                <li><a href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/about">Giới thiệu</a></li>
-            </ul>
-        </div>
-        <div class="footer-contact">
-            <h4>Thông tin liên hệ</h4>
-            <div class="contact-item">📧 huynhminhphu197@gmail.com</div>
-            <div class="contact-item">📍 TP. Hồ Chí Minh, Việt Nam</div>
-            <div class="social-icons">
-                <a href="https://www.facebook.com/huynhphu197" class="social-link fb">Facebook</a>
-                <a href="https://github.com/PhuHuynh197" class="social-link gh">GitHub</a>
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3 class="footer-logo">Huỳnh Minh <span>Phú</span></h3>
+                <p>Chia sẻ kiến thức về lập trình Java và JavaScript. Nơi học hỏi và phát triển kỹ năng lập trình mạng cùng cộng đồng sinh viên HUTECH.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Liên kết nhanh</h4>
+                <ul>
+                    <li><a href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/">Trang Chủ</a></li>
+                    <li><a href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts">Bài viết</a></li>
+                    <li><a href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/about">Giới thiệu</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Thông tin liên hệ</h4>
+                <div class="contact-item">📧 huynhminhphu197@gmail.com</div>
+                <div class="contact-item">📍 TP. Hồ Chí Minh, Việt Nam</div>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/huynhphu197" class="social-link fb">Facebook</a>
+                    <a href="https://github.com/PhuHuynh197" class="social-link gh">GitHub</a>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="footer-bottom">
-        <p>© 2025 Huỳnh Minh Phú</p>
-    </div>
-</footer>
+        <div class="footer-bottom">
+            <p>© 2025 Huỳnh Minh Phú</p>
+        </div>
+    </footer>
 
-
-    </main>
-    
-<footer class="footer">
-        <span>&copy; 2025 <a href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/">Huỳnh Minh Phú</a></span> · 
-
-    <span>
-        Powered by
-        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
-        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
-    </span>
-</footer>
-<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
-        <path d="M12 6H0l6-6z" />
-    </svg>
-</a>
-
-<script>
-    let menu = document.getElementById('menu');
-    if (menu) {
-        
-        const scrollPosition = localStorage.getItem("menu-scroll-position");
-        if (scrollPosition) {
-            menu.scrollLeft = parseInt(scrollPosition, 10);
-        }
-        
-        menu.onscroll = function () {
-            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-        }
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
-        });
-    });
-
-</script>
-<script>
-    var mybutton = document.getElementById("top-link");
-    window.onscroll = function () {
-        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
-            mybutton.style.visibility = "visible";
-            mybutton.style.opacity = "1";
-        } else {
-            mybutton.style.visibility = "hidden";
-            mybutton.style.opacity = "0";
-        }
-    };
-
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        const html = document.querySelector("html");
-        if (html.dataset.theme === "dark") {
-            html.dataset.theme = 'light';
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            html.dataset.theme = 'dark';
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
-
-</script>
 </body>
-
 </html>
