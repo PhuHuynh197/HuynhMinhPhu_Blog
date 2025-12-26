@@ -15,21 +15,25 @@ theme = "PaperMod"
     name = "Trang Chủ"
     url = "/"
     weight = 10
+
   [[menu.main]]
     identifier = "posts"
     name = "Bài Viết"
-    url = "posts"
+    url = "/posts/"        # Đã sửa: Thêm dấu / để link chuẩn
     weight = 20
+
   [[menu.main]]
     identifier = "about"
     name = "Giới Thiệu"
-    url = "about"
+    url = "/about/"        # Đã sửa
     weight = 30
+
   [[menu.main]]
     identifier = "contact"
     name = "Liên Hệ"
-    url = "contact"
+    url = "/contact/"      # Đã sửa
     weight = 40
+
   [[menu.main]]
     identifier = "cv"
     name = "CV"
