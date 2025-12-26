@@ -1,181 +1,48 @@
 <!DOCTYPE html>
-<html lang="en" dir="auto" data-theme="light">
-
-<head><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
-<title>Quản lý địa chỉ IP với lớp InetAddress | Huỳnh Minh Phú</title>
-<meta name="keywords" content="Java, Network">
-<meta name="description" content="Trong lập trình mạng Java, việc xác định địa chỉ của máy cục bộ hoặc máy từ xa
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý địa chỉ IP với lớp InetAddress | Huỳnh Minh Phú</title>
+    
+    <meta name="description" content="Trong lập trình mạng Java, việc xác định địa chỉ của máy cục bộ hoặc máy từ xa
 là yêu cầu cơ bản khi xây dựng các ứng dụng client–server.
 Java cung cấp lớp InetAddress thuộc gói java.net để thực hiện các công việc
 liên quan đến địa chỉ IP và tên miền.
 Lớp InetAddress hỗ trợ cả hai chuẩn địa chỉ IPv4 và IPv6, đồng thời cho
 phép phân giải tên miền (domain name) sang địa chỉ IP tương ứng.
 Đây là lớp thường xuyên xuất hiện trong các bài thực hành lập trình mạng.">
-<meta name="author" content="">
-<link rel="canonical" href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-1/">
-<link crossorigin="anonymous" href="/HuynhMinhPhu_Blog/assets/css/stylesheet.fd5566c526ae48aadabd950798a2dc3568536401560eae5caac3765a42a9e7b5.css" integrity="sha256-/VVmxSauSKravZUHmKLcNWhTZAFWDq5cqsN2WkKp57U=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/apple-touch-icon.png">
-<link rel="mask-icon" href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/safari-pinned-tab.svg">
-<meta name="theme-color" content="#2e2e33">
-<meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-1/">
-<noscript>
+    <meta name="author" content="">
+
+    <link rel="icon" href="/HuynhMinhPhu_Blog/favicon.ico">
+
     <style>
-        #theme-toggle,
-        .top-link {
-            display: none;
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;  
+            background-color: #f8fafc;
+            font-family: system-ui, -apple-system, sans-serif;
         }
-
+        
+         
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+        
+         
+        main {
+            flex: 1;
+        }
     </style>
-</noscript>
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.querySelector("html").dataset.theme = 'dark';
-    }
-
-</script><meta property="og:url" content="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-1/">
-  <meta property="og:site_name" content="Huỳnh Minh Phú">
-  <meta property="og:title" content="Quản lý địa chỉ IP với lớp InetAddress">
-  <meta property="og:description" content="Trong lập trình mạng Java, việc xác định địa chỉ của máy cục bộ hoặc máy từ xa là yêu cầu cơ bản khi xây dựng các ứng dụng client–server. Java cung cấp lớp InetAddress thuộc gói java.net để thực hiện các công việc liên quan đến địa chỉ IP và tên miền.
-Lớp InetAddress hỗ trợ cả hai chuẩn địa chỉ IPv4 và IPv6, đồng thời cho phép phân giải tên miền (domain name) sang địa chỉ IP tương ứng. Đây là lớp thường xuyên xuất hiện trong các bài thực hành lập trình mạng.">
-  <meta property="og:locale" content="vi">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-12-24T08:00:00+07:00">
-    <meta property="article:modified_time" content="2025-12-24T08:00:00+07:00">
-    <meta property="article:tag" content="Java">
-    <meta property="article:tag" content="Network">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Quản lý địa chỉ IP với lớp InetAddress">
-<meta name="twitter:description" content="Trong lập trình mạng Java, việc xác định địa chỉ của máy cục bộ hoặc máy từ xa
-là yêu cầu cơ bản khi xây dựng các ứng dụng client–server.
-Java cung cấp lớp InetAddress thuộc gói java.net để thực hiện các công việc
-liên quan đến địa chỉ IP và tên miền.
-Lớp InetAddress hỗ trợ cả hai chuẩn địa chỉ IPv4 và IPv6, đồng thời cho
-phép phân giải tên miền (domain name) sang địa chỉ IP tương ứng.
-Đây là lớp thường xuyên xuất hiện trong các bài thực hành lập trình mạng.">
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "Quản lý địa chỉ IP với lớp InetAddress",
-      "item": "https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-1/"
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Quản lý địa chỉ IP với lớp InetAddress",
-  "name": "Quản lý địa chỉ IP với lớp InetAddress",
-  "description": "Trong lập trình mạng Java, việc xác định địa chỉ của máy cục bộ hoặc máy từ xa là yêu cầu cơ bản khi xây dựng các ứng dụng client–server. Java cung cấp lớp InetAddress thuộc gói java.net để thực hiện các công việc liên quan đến địa chỉ IP và tên miền.\nLớp InetAddress hỗ trợ cả hai chuẩn địa chỉ IPv4 và IPv6, đồng thời cho phép phân giải tên miền (domain name) sang địa chỉ IP tương ứng. Đây là lớp thường xuyên xuất hiện trong các bài thực hành lập trình mạng.\n",
-  "keywords": [
-    "Java", "Network"
-  ],
-  "articleBody": "Trong lập trình mạng Java, việc xác định địa chỉ của máy cục bộ hoặc máy từ xa là yêu cầu cơ bản khi xây dựng các ứng dụng client–server. Java cung cấp lớp InetAddress thuộc gói java.net để thực hiện các công việc liên quan đến địa chỉ IP và tên miền.\nLớp InetAddress hỗ trợ cả hai chuẩn địa chỉ IPv4 và IPv6, đồng thời cho phép phân giải tên miền (domain name) sang địa chỉ IP tương ứng. Đây là lớp thường xuyên xuất hiện trong các bài thực hành lập trình mạng.\n1. Tổng quan về InetAddress InetAddress không có constructor công khai, vì vậy đối tượng của lớp này được tạo thông qua các phương thức tĩnh. Một số chức năng chính của InetAddress gồm:\nPhân giải tên miền sang địa chỉ IP Lấy thông tin host cục bộ Kiểm tra khả năng kết nối đến một host Hỗ trợ làm việc với mạng TCP và UDP 2. Phân giải tên miền sang địa chỉ IP Trong thực tế, người dùng thường làm việc với tên miền thay vì địa chỉ IP. Do đó, việc chuyển đổi từ tên miền sang IP là rất quan trọng.\nVí dụ lấy địa chỉ IP của một website import java.net.InetAddress; public class InetAddressDemo { public static void main(String[] args) { try { // Phân giải tên miền sang địa chỉ IP InetAddress address = InetAddress.getByName(\"www.hutech.edu.vn\"); // In ra địa chỉ IP System.out.println(\"Địa chỉ IP: \" + address.getHostAddress()); // In ra tên host System.out.println(\"Tên host: \" + address.getHostName()); } catch (Exception e) { e.printStackTrace(); } } } 3. Phân tích chương trình InetAddress.getByName() Dùng để lấy thông tin địa chỉ IP từ một tên miền hoặc chuỗi IP.\ngetHostAddress() Trả về địa chỉ IP ở dạng chuỗi, ví dụ: 203.113.xxx.xxx.\ngetHostName() Trả về tên miền tương ứng với địa chỉ IP.\nĐoạn chương trình trên thường được sử dụng trong các bài thực hành đầu tiên để làm quen với lập trình mạng trong Java.\n4. Lấy thông tin máy cục bộ Ngoài việc làm việc với máy từ xa, InetAddress còn cho phép lấy thông tin địa chỉ IP của chính máy đang chạy chương trình.\nimport java.net.InetAddress; public class LocalHostDemo { public static void main(String[] args) { try { InetAddress local = InetAddress.getLocalHost(); System.out.println(\"Local IP: \" + local.getHostAddress()); System.out.println(\"Local Hostname: \" + local.getHostName()); } catch (Exception e) { e.printStackTrace(); } } } 5. Ứng dụng thực tế Lớp InetAddress thường được sử dụng trong:\nChương trình chat client–server\nỨng dụng truyền file qua mạng\nKiểm tra trạng thái kết nối mạng\nCác hệ thống phân tán đơn giản\nViệc nắm vững InetAddress là nền tảng quan trọng trước khi học đến Socket, ServerSocket, TCP và UDP trong Java.\n",
-  "wordCount" : "461",
-  "inLanguage": "en",
-  "datePublished": "2025-12-24T08:00:00+07:00",
-  "dateModified": "2025-12-24T08:00:00+07:00",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-1/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Huỳnh Minh Phú",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/favicon.ico"
-    }
-  }
-}
-</script>
 </head>
-<body id="top">
-    <header class="header">
-    <nav class="nav">
-        <div class="logo">
-            <a href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/" accesskey="h" title="Huỳnh Minh Phú (Alt + H)">Huỳnh Minh Phú</a>
-            <div class="logo-switches">
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
-                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button>
-            </div>
-        </div>
-        <ul id="menu">
-            <li>
-                <a href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/" title="Trang Chủ">
-                    <span>Trang Chủ</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/" title="Bài Viết">
-                    <span>Bài Viết</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/about/" title="Giới Thiệu">
-                    <span>Giới Thiệu</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/contact/" title="Liên Hệ">
-                    <span>Liên Hệ</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://drive.google.com/file/d/1RgnPTwcMSXdgxbAq8_djPUjEExtqdqtP/view?usp=drive_link" title="CV">
-                    <span>CV</span>&nbsp;
-                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
-                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
-                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
-                        <path d="M15 3h6v6"></path>
-                        <path d="M10 14L21 3"></path>
-                    </svg>
-                </a>
-            </li>
-        </ul>
-    </nav>
-</header>
-<main class="main">
+<body>
+
+    <main>
+        
 
 <header class="main-header">
     <div class="header-container">
@@ -554,82 +421,6 @@ Socket, ServerSocket, TCP và UDP trong Java.</p>
 
 
     </main>
-    
-<footer class="footer">
-        <span>&copy; 2025 <a href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/">Huỳnh Minh Phú</a></span> · 
 
-    <span>
-        Powered by
-        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
-        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
-    </span>
-</footer>
-<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
-        <path d="M12 6H0l6-6z" />
-    </svg>
-</a>
-
-<script>
-    let menu = document.getElementById('menu');
-    if (menu) {
-        
-        const scrollPosition = localStorage.getItem("menu-scroll-position");
-        if (scrollPosition) {
-            menu.scrollLeft = parseInt(scrollPosition, 10);
-        }
-        
-        menu.onscroll = function () {
-            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-        }
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
-        });
-    });
-
-</script>
-<script>
-    var mybutton = document.getElementById("top-link");
-    window.onscroll = function () {
-        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
-            mybutton.style.visibility = "visible";
-            mybutton.style.opacity = "1";
-        } else {
-            mybutton.style.visibility = "hidden";
-            mybutton.style.opacity = "0";
-        }
-    };
-
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        const html = document.querySelector("html");
-        if (html.dataset.theme === "dark") {
-            html.dataset.theme = 'light';
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            html.dataset.theme = 'dark';
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
-
-</script>
 </body>
-
 </html>
