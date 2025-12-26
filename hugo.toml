@@ -28,10 +28,10 @@ theme = "PaperMod"
   [[menu.main]]
     identifier = "contact"
     name = "Liên Hệ"
-    url = "posts"
+    url = "contact"
     weight = 40
   [[menu.main]]
     identifier = "cv"
     name = "CV"
-    url = "posts"
+    url = "https://drive.google.com/file/d/1RgnPTwcMSXdgxbAq8_djPUjEExtqdqtP/view?usp=drive_link"
     weight = 50

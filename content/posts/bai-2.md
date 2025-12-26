@@ -1,6 +1,6 @@
 ---
 title: "Làm việc với tập tin và thư mục trong Java"
-date: 2025-12-24T08:15:00+07:00
+date: 2025-12-15T08:15:00+07:00
 draft: false
 tags: ["Java", "File", "IO"]
 ---

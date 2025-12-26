@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Thread on Huỳnh Minh Phú</title>
-    <link>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/tags/thread/</link>
+    <link>http://localhost:1313/HuynhMinhPhu_Blog/tags/thread/</link>
     <description>Recent content in Thread on Huỳnh Minh Phú</description>
     <generator>Hugo -- 0.153.2</generator>
     <language>vi</language>
-    <lastBuildDate>Wed, 24 Dec 2025 09:00:00 +0700</lastBuildDate>
-    <atom:link href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/tags/thread/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 11 Oct 2025 09:00:00 +0700</lastBuildDate>
+    <atom:link href="http://localhost:1313/HuynhMinhPhu_Blog/tags/thread/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Lập trình Single Thread trong Java</title>
-      <link>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-5/</link>
-      <pubDate>Wed, 24 Dec 2025 09:00:00 +0700</pubDate>
-      <guid>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-5/</guid>
+      <link>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-5/</link>
+      <pubDate>Sat, 11 Oct 2025 09:00:00 +0700</pubDate>
+      <guid>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-5/</guid>
       <description>&lt;p&gt;Trong lập trình Java, thread (luồng) cho phép chương trình thực thi
 các công việc một cách độc lập với luồng chính.
 Thread là kiến thức quan trọng trong lập trình mạng, vì các chương trình

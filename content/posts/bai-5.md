@@ -1,6 +1,6 @@
 ---
 title: "Lập trình Single Thread trong Java"
-date: 2025-12-24T09:00:00+07:00
+date: 2025-10-11T09:00:00+07:00
 draft: false
 tags: ["Java", "Thread"]
 ---

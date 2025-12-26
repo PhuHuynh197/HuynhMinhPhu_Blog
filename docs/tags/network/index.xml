@@ -2,73 +2,49 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Network on Huỳnh Minh Phú</title>
-    <link>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/tags/network/</link>
+    <link>http://localhost:1313/HuynhMinhPhu_Blog/tags/network/</link>
     <description>Recent content in Network on Huỳnh Minh Phú</description>
     <generator>Hugo -- 0.153.2</generator>
     <language>vi</language>
-    <lastBuildDate>Wed, 24 Dec 2025 10:20:00 +0700</lastBuildDate>
-    <atom:link href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/tags/network/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 24 Dec 2025 08:00:00 +0700</lastBuildDate>
+    <atom:link href="http://localhost:1313/HuynhMinhPhu_Blog/tags/network/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Tổng hợp mô hình Client – Server trong lập trình mạng Java</title>
-      <link>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-10/</link>
-      <pubDate>Wed, 24 Dec 2025 10:20:00 +0700</pubDate>
-      <guid>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-10/</guid>
-      <description>&lt;p&gt;Mô hình Client – Server là mô hình nền tảng trong lập trình mạng.
-Toàn bộ các bài thực hành trong môn Lập trình mạng Java
-đều xoay quanh mô hình này với hai giao thức chính là TCP và UDP.&lt;/p&gt;
+      <title>Quản lý địa chỉ IP với lớp InetAddress</title>
+      <link>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-1/</link>
+      <pubDate>Wed, 24 Dec 2025 08:00:00 +0700</pubDate>
+      <guid>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-1/</guid>
+      <description>&lt;p&gt;Trong lập trình mạng Java, việc xác định địa chỉ của máy cục bộ hoặc máy từ xa
+là yêu cầu cơ bản khi xây dựng các ứng dụng client–server.
+Java cung cấp lớp &lt;code&gt;InetAddress&lt;/code&gt; thuộc gói &lt;code&gt;java.net&lt;/code&gt; để thực hiện các công việc
+liên quan đến địa chỉ IP và tên miền.&lt;/p&gt;
+&lt;p&gt;Lớp &lt;code&gt;InetAddress&lt;/code&gt; hỗ trợ cả hai chuẩn địa chỉ &lt;strong&gt;IPv4&lt;/strong&gt; và &lt;strong&gt;IPv6&lt;/strong&gt;, đồng thời cho
+phép phân giải tên miền (domain name) sang địa chỉ IP tương ứng.
+Đây là lớp thường xuyên xuất hiện trong các bài thực hành lập trình mạng.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Lập trình TCP Client và TCP Server trong Java</title>
+      <link>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-7/</link>
+      <pubDate>Mon, 06 Oct 2025 09:30:00 +0700</pubDate>
+      <guid>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-7/</guid>
+      <description>&lt;p&gt;Trong mô hình lập trình mạng TCP, &lt;strong&gt;Client&lt;/strong&gt; là phía khởi tạo kết nối đến Server.
+Client sử dụng lớp &lt;code&gt;Socket&lt;/code&gt; để kết nối đến địa chỉ IP và cổng (port) của Server.
+Dưới đây là các khái niệm.&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;1-tổng-quan-mô-hình-client--server&#34;&gt;1. Tổng quan mô hình Client – Server&lt;/h2&gt;
+&lt;h2 id=&#34;1-khái-niệm-tcp-client&#34;&gt;1. Khái niệm TCP Client&lt;/h2&gt;
+&lt;p&gt;TCP Client chịu trách nhiệm:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Client&lt;/strong&gt;: khởi tạo kết nối và gửi yêu cầu&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Server&lt;/strong&gt;: chờ kết nối, xử lý yêu cầu và phản hồi&lt;/li&gt;
-&lt;li&gt;Hai bên giao tiếp thông qua mạng máy tính&lt;/li&gt;
+&lt;li&gt;Kết nối đến TCP Server&lt;/li&gt;
+&lt;li&gt;Gửi dữ liệu đến Server&lt;/li&gt;
+&lt;li&gt;Nhận dữ liệu phản hồi từ Server&lt;/li&gt;
 &lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;2-mô-hình-tcp-client--server&#34;&gt;2. Mô hình TCP Client – Server&lt;/h2&gt;
-&lt;h3 id=&#34;tcp-client&#34;&gt;TCP Client&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; java.io.DataInputStream;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; java.io.DataOutputStream;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; java.net.Socket;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;TCPClient&lt;/span&gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;(String&lt;span style=&#34;color:#f92672&#34;&gt;[]&lt;/span&gt; args) {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;try&lt;/span&gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            Socket socket &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Socket(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;localhost&amp;#34;&lt;/span&gt;, 1234);
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            DataOutputStream dos &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; DataOutputStream(socket.&lt;span style=&#34;color:#a6e22e&#34;&gt;getOutputStream&lt;/span&gt;());
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            DataInputStream dis &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; DataInputStream(socket.&lt;span style=&#34;color:#a6e22e&#34;&gt;getInputStream&lt;/span&gt;());
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            dos.&lt;span style=&#34;color:#a6e22e&#34;&gt;writeUTF&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hello Server&amp;#34;&lt;/span&gt;);
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            String response &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; dis.&lt;span style=&#34;color:#a6e22e&#34;&gt;readUTF&lt;/span&gt;();
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            System.&lt;span style=&#34;color:#a6e22e&#34;&gt;out&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;println&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Server tra ve: &amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; response);
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            socket.&lt;span style=&#34;color:#a6e22e&#34;&gt;close&lt;/span&gt;();
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        } &lt;span style=&#34;color:#66d9ef&#34;&gt;catch&lt;/span&gt; (Exception e) {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            e.&lt;span style=&#34;color:#a6e22e&#34;&gt;printStackTrace&lt;/span&gt;();
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
-&lt;h2 id=&#34;4-luồng-xử-lý-udp-client--server&#34;&gt;4. Luồng xử lý UDP Client – Server&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// UDP Client&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;DatagramSocket clientSocket &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; DatagramSocket();
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// UDP Server&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;DatagramSocket serverSocket &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; DatagramSocket(9876);
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
-&lt;h2 id=&#34;5-tổng-kết-bài-học&#34;&gt;5. Tổng kết bài học&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;InetAddress&lt;/code&gt; dùng để xử lý địa chỉ IP&lt;/p&gt;</description>
+&lt;p&gt;Trong Java, TCP Client được xây dựng dựa trên lớp &lt;code&gt;Socket&lt;/code&gt;
+thuộc gói &lt;code&gt;java.net&lt;/code&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Lập trình UDP với Datagram trong Java</title>
-      <link>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-8/</link>
-      <pubDate>Wed, 24 Dec 2025 10:00:00 +0700</pubDate>
-      <guid>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-8/</guid>
+      <link>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-8/</link>
+      <pubDate>Sat, 19 Jul 2025 10:00:00 +0700</pubDate>
+      <guid>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-8/</guid>
       <description>&lt;p&gt;Trong lập trình mạng, UDP (User Datagram Protocol) là giao thức truyền dữ liệu
 không kết nối. UDP không đảm bảo độ tin cậy nhưng có tốc độ truyền nhanh.
 Java hỗ trợ UDP thông qua các lớp &lt;code&gt;DatagramSocket&lt;/code&gt; và &lt;code&gt;DatagramPacket&lt;/code&gt;
@@ -147,36 +123,60 @@ trong gói &lt;code&gt;java.net&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;UDP Client gửi dữ liệu mà không cần chờ phản hồi&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Lập trình TCP Client và TCP Server trong Java</title>
-      <link>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-7/</link>
-      <pubDate>Wed, 24 Dec 2025 09:30:00 +0700</pubDate>
-      <guid>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-7/</guid>
-      <description>&lt;p&gt;Trong mô hình lập trình mạng TCP, &lt;strong&gt;Client&lt;/strong&gt; là phía khởi tạo kết nối đến Server.
-Client sử dụng lớp &lt;code&gt;Socket&lt;/code&gt; để kết nối đến địa chỉ IP và cổng (port) của Server.
-Dưới đây là các khái niệm.&lt;/p&gt;
+      <title>Tổng hợp mô hình Client – Server trong lập trình mạng Java</title>
+      <link>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-10/</link>
+      <pubDate>Fri, 07 Mar 2025 10:20:00 +0700</pubDate>
+      <guid>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-10/</guid>
+      <description>&lt;p&gt;Mô hình Client – Server là mô hình nền tảng trong lập trình mạng.
+Toàn bộ các bài thực hành trong môn Lập trình mạng Java
+đều xoay quanh mô hình này với hai giao thức chính là TCP và UDP.&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;1-khái-niệm-tcp-client&#34;&gt;1. Khái niệm TCP Client&lt;/h2&gt;
-&lt;p&gt;TCP Client chịu trách nhiệm:&lt;/p&gt;
+&lt;h2 id=&#34;1-tổng-quan-mô-hình-client--server&#34;&gt;1. Tổng quan mô hình Client – Server&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Kết nối đến TCP Server&lt;/li&gt;
-&lt;li&gt;Gửi dữ liệu đến Server&lt;/li&gt;
-&lt;li&gt;Nhận dữ liệu phản hồi từ Server&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Client&lt;/strong&gt;: khởi tạo kết nối và gửi yêu cầu&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Server&lt;/strong&gt;: chờ kết nối, xử lý yêu cầu và phản hồi&lt;/li&gt;
+&lt;li&gt;Hai bên giao tiếp thông qua mạng máy tính&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Trong Java, TCP Client được xây dựng dựa trên lớp &lt;code&gt;Socket&lt;/code&gt;
-thuộc gói &lt;code&gt;java.net&lt;/code&gt;.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Quản lý địa chỉ IP với lớp InetAddress</title>
-      <link>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-1/</link>
-      <pubDate>Wed, 24 Dec 2025 08:00:00 +0700</pubDate>
-      <guid>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-1/</guid>
-      <description>&lt;p&gt;Trong lập trình mạng Java, việc xác định địa chỉ của máy cục bộ hoặc máy từ xa
-là yêu cầu cơ bản khi xây dựng các ứng dụng client–server.
-Java cung cấp lớp &lt;code&gt;InetAddress&lt;/code&gt; thuộc gói &lt;code&gt;java.net&lt;/code&gt; để thực hiện các công việc
-liên quan đến địa chỉ IP và tên miền.&lt;/p&gt;
-&lt;p&gt;Lớp &lt;code&gt;InetAddress&lt;/code&gt; hỗ trợ cả hai chuẩn địa chỉ &lt;strong&gt;IPv4&lt;/strong&gt; và &lt;strong&gt;IPv6&lt;/strong&gt;, đồng thời cho
-phép phân giải tên miền (domain name) sang địa chỉ IP tương ứng.
-Đây là lớp thường xuyên xuất hiện trong các bài thực hành lập trình mạng.&lt;/p&gt;</description>
+&lt;hr&gt;
+&lt;h2 id=&#34;2-mô-hình-tcp-client--server&#34;&gt;2. Mô hình TCP Client – Server&lt;/h2&gt;
+&lt;h3 id=&#34;tcp-client&#34;&gt;TCP Client&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; java.io.DataInputStream;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; java.io.DataOutputStream;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; java.net.Socket;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;TCPClient&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;(String&lt;span style=&#34;color:#f92672&#34;&gt;[]&lt;/span&gt; args) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;try&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            Socket socket &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Socket(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;localhost&amp;#34;&lt;/span&gt;, 1234);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            DataOutputStream dos &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; DataOutputStream(socket.&lt;span style=&#34;color:#a6e22e&#34;&gt;getOutputStream&lt;/span&gt;());
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            DataInputStream dis &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; DataInputStream(socket.&lt;span style=&#34;color:#a6e22e&#34;&gt;getInputStream&lt;/span&gt;());
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            dos.&lt;span style=&#34;color:#a6e22e&#34;&gt;writeUTF&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hello Server&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            String response &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; dis.&lt;span style=&#34;color:#a6e22e&#34;&gt;readUTF&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            System.&lt;span style=&#34;color:#a6e22e&#34;&gt;out&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;println&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Server tra ve: &amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; response);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            socket.&lt;span style=&#34;color:#a6e22e&#34;&gt;close&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        } &lt;span style=&#34;color:#66d9ef&#34;&gt;catch&lt;/span&gt; (Exception e) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            e.&lt;span style=&#34;color:#a6e22e&#34;&gt;printStackTrace&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id=&#34;4-luồng-xử-lý-udp-client--server&#34;&gt;4. Luồng xử lý UDP Client – Server&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// UDP Client&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;DatagramSocket clientSocket &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; DatagramSocket();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// UDP Server&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;DatagramSocket serverSocket &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; DatagramSocket(9876);
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id=&#34;5-tổng-kết-bài-học&#34;&gt;5. Tổng kết bài học&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;InetAddress&lt;/code&gt; dùng để xử lý địa chỉ IP&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

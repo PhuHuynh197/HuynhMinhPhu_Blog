@@ -6,11 +6,11 @@
             <span class="logo-icon"></span> PHU.<span>DEV</span>
         </a>
         <nav class="nav-menu">
-            <a href="{{ "" | relURL }}" class="nav-link">Trang Chủ</a>
+            <a href="{{ "" | relURL }}" class="nav-link active">Trang Chủ</a>
             <a href="{{ "posts" | relURL }}" class="nav-link">Bài Viết</a>
             <a href="{{ "about" | relURL }}" class="nav-link">Giới Thiệu</a>
-            <a href="{{ "posts" | relURL }}" class="nav-link">Liên Hệ</a>
-            <a href="{{ "posts" | relURL }}" class="nav-link">CV</a>
+            <a href="{{ "contact" | relURL }}" class="nav-link">Liên Hệ</a>
+            <a href="https://drive.google.com/file/d/1RgnPTwcMSXdgxbAq8_djPUjEExtqdqtP/view?usp=drive_link" class="nav-link">CV</a>
         </nav>
         <div class="header-cta">
             <a href="https://github.com/PhuHuynh197" target="_blank" class="git-btn">GitHub</a>
@@ -57,11 +57,16 @@
     }
     .avatar-wrapper { display: inline-block; position: relative; }
     .avatar-img {
-        width: 170px; height: 170px; border-radius: 35px;
-        border: 6px solid #fff; transform: rotate(-3deg);
-        box-shadow: 15px 15px 35px rgba(0,0,0,0.1);
-        transition: var(--transition); object-fit: cover;
+        width: 240px;
+        height: 240px;
+        border-radius: 45px;
+        border: 6px solid #fff;
+        transform: rotate(-3deg);
+        box-shadow: 20px 20px 45px rgba(0,0,0,0.15);
+        transition: var(--transition);
+        object-fit: cover;
     }
+
     .avatar-img:hover { transform: rotate(0deg) scale(1.08); }
     .hero-title { font-size: 3.8rem; font-weight: 900; color: var(--dark); margin-top: 35px; letter-spacing: -2px; }
     .hero-title span { color: var(--primary); }
@@ -85,61 +90,106 @@
     .skill-card h3 { font-size: 1.3rem; font-weight: 800; margin-bottom: 12px; color: var(--dark); }
     .skill-card p { color: #64748b; font-size: 0.95rem; line-height: 1.6; }
 
-    /* ===== POSTS SECTION (CHỈ PHẦN NÀY ĐƯỢC CHỈNH) ===== */
+    /* ===== POSTS STYLE ===== */
     .posts-grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr); /* 3 card / hàng */
-        gap: 30px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px;
         margin-bottom: 80px;
     }
 
     .post-card {
-        background: #ffffff;
-        padding: 28px 26px;
-        border-radius: 18px;                 /* Bo góc vừa phải, nhìn học thuật */
-        border: 1px solid #e5e7eb;            /* Viền rõ ràng */
-        transition: all 0.3s ease;
+        background: linear-gradient(180deg, #ffffff, #fafafa);
+        padding: 26px 28px;
+        border-radius: 18px;
+        border: 1px solid #eef2f7;
+
         display: flex;
         flex-direction: column;
-        min-height: 260px;                    /* Card cao đều nhau */
-        box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+        gap: 12px;
+
+        min-height: 190px;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+        transition: all 0.35s ease;
     }
 
     .post-card:hover {
-        border-color: var(--primary);
         transform: translateY(-6px);
-        box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+        border-color: var(--primary);
+        box-shadow: 0 18px 45px rgba(2,132,199,0.15);
+    }
+
+    /* META */
+    .post-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
     .post-tag {
+        background: var(--primary-light);
         color: var(--primary);
+        font-size: 0.7rem;
         font-weight: 800;
-        font-size: 0.75rem;
+        padding: 5px 14px;
+        border-radius: 999px;
         text-transform: uppercase;
-        margin-bottom: 15px;
     }
 
+    .post-date {
+        font-size: 0.75rem;
+        color: #94a3b8;
+        font-weight: 600;
+    }
+
+    /* TITLE */
     .post-title {
-        font-size: 1.5rem;
-        font-weight: 800;
+        font-size: 1.3rem;
+        font-weight: 900;
         color: var(--dark);
         text-decoration: none;
-        margin-bottom: 15px;
-        line-height: 1.4;
+        line-height: 1.35;
+
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
 
+    .post-title:hover {
+        color: var(--primary);
+    }
+
+    /* SUMMARY */
     .post-summary {
-        color: #64748b;
         font-size: 0.95rem;
-        line-height: 1.6;
-        margin-bottom: 25px;
-        flex-grow: 1;
+        color: #64748b;
+        line-height: 1.65;
+
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    /* READ MORE */
+    .read-more {
+        margin-top: auto;
+        font-size: 0.9rem;
+        font-weight: 800;
+        color: var(--primary);
+        text-decoration: none;
+        align-self: flex-start;
+    }
+
+    .read-more:hover {
+        text-decoration: underline;
     }
 
     /* Responsive */
-    @media (max-width: 1024px) {
+    @media (max-width: 900px) {
         .posts-grid {
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: 1fr;
         }
     }
 
@@ -148,6 +198,34 @@
             grid-template-columns: 1fr;
         }
     }
+    .view-all-wrapper {
+        text-align: center;
+        margin-top: -30px;
+        margin-bottom: 80px;
+    }
+
+    .view-all-btn {
+        display: inline-block;
+        padding: 14px 36px;
+        border-radius: 999px;
+
+        background: linear-gradient(135deg, var(--primary), #0ea5e9);
+        color: #fff;
+
+        font-size: 0.95rem;
+        font-weight: 800;
+        text-decoration: none;
+        letter-spacing: 0.3px;
+
+        box-shadow: 0 12px 30px rgba(2,132,199,0.35);
+        transition: all 0.3s ease;
+    }
+
+    .view-all-btn:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 18px 45px rgba(2,132,199,0.45);
+    }
+
     /* CSS FIX FOOTER FULL MÀN HÌNH */
     .site-footer {
         background-color: var(--footer-bg); /* Màu tối #0f172a */
@@ -250,54 +328,55 @@
 
 <section class="hero-section">
     <div class="avatar-wrapper">
-        <img src="{{ "images/avatar.jpg" | absURL }}" alt="Huỳnh Minh Phú" class="avatar-img">
+        <img src="{{ "images/avata2.jpg" | absURL }}" alt="Huỳnh Minh Phú" class="avatar-img">
     </div>
     <h1 class="hero-title">Huỳnh Minh <span>Phú.</span></h1>
     <p class="hero-desc">
         Sinh viên <b>HUTECH</b> chuyên ngành Công nghệ thông tin. Chuyên sâu về <b>Lập trình mạng</b>, <b>Java</b> và hệ sinh thái <b>JavaScript</b> hiện đại.
     </p>
     <div class="btn-group">
-        <a href="{{ "/posts" | absURL }}" class="git-btn" style="padding: 15px 35px; background: var(--primary); font-size: 1rem; border-radius: 15px;">Khám phá Blog</a>
-        <a href="{{ "/about" | absURL }}" style="color: var(--dark); font-weight: 800; text-decoration: none; padding: 16px; margin-left: 10px;">Về mình →</a>
+        <a href="{{ "posts" | relURL }}" class="git-btn" style="padding: 15px 35px; background: var(--primary); font-size: 1rem; border-radius: 15px;">Khám phá Blog</a>
+        <a href="{{ "about" | relURL }}" style="color: var(--dark); font-weight: 800; text-decoration: none; padding: 16px; margin-left: 10px;">Về mình →</a>
     </div>
 </section>
 
-<div class="container">
-    <div class="section-header"><h2>Kỹ năng chuyên môn</h2></div>
-    <div class="skills-grid">
-        <div class="skill-card">
-            <img src="{{ "images/java-icon.png" | absURL }}" alt="Java" class="skill-icon">
-            <h3>Java System</h3>
-            <p>Xử lý đa luồng, Socket Programming và lập trình phía máy chủ tối ưu.</p>
-        </div>
-        <div class="skill-card">
-            <img src="{{ "images/js-icon.png" | absURL }}" alt="JS" class="skill-icon">
-            <h3>Modern JS</h3>
-            <p>Làm chủ ES6+, xử lý API bất đồng bộ và kỹ thuật DOM Manipulation.</p>
-        </div>
-        <div class="skill-card">
-            <img src="{{ "images/network-icon.png" | absURL }}" alt="Network" class="skill-icon">
-            <h3>Networking</h3>
-            <p>Am hiểu mô hình OSI, giao thức TCP/UDP và cấu trúc hạ tầng mạng.</p>
-        </div>
-        <div class="skill-card">
-            <img src="{{ "images/git-icon.png" | absURL }}" alt="Git" class="skill-icon">
-            <h3>DevOps Tools</h3>
-            <p>Quản lý mã nguồn bằng Git/GitHub, CI/CD và quy trình làm việc chuyên nghiệp.</p>
-        </div>
+    <div class="section-header">
+        <h2>Bài viết mới nhất</h2>
     </div>
 
-    <div class="section-header"><h2>Bài viết mới nhất</h2></div>
     <div class="posts-grid">
-        {{ range first 6 (where .Site.RegularPages "Type" "posts") }}
+
+        {{ range first 4 (where .Site.RegularPages "Type" "posts") }}
+
         <article class="post-card">
-            <span class="post-tag">Lập trình mạng</span>
-            <a href="{{ .Permalink }}" class="post-title">{{ .Title }}</a>
-            <p class="post-summary">{{ .Summary | truncate 130 }}</p>
-            <a href="{{ .Permalink }}" style="font-weight: 800; color: var(--primary); text-decoration: none; font-size: 0.95rem;">Đọc bài viết →</a>
+
+            <div class="post-meta">
+                <span class="post-tag">Lập trình mạng</span>
+                <span class="post-date">{{ .Date.Format "02/01/2006" }}</span>
+            </div>
+
+            <a href="{{ .Permalink }}" class="post-title">
+                {{ .Title }}
+            </a>
+
+            <p class="post-summary">
+                {{ .Summary | truncate 140 }}
+            </p>
+
+            <a href="{{ .Permalink }}" class="read-more">
+                Đọc thêm →
+            </a>
+
         </article>
         {{ end }}
     </div>
+    <div class="view-all-wrapper">
+        <a href="{{ "posts" | relURL }}" class="view-all-btn">
+            Xem tất cả bài viết →
+        </a>
+    </div>
+
+
 </div>
 
 <footer class="site-footer">
@@ -309,9 +388,9 @@
         <div class="footer-links">
             <h4>Liên kết nhanh</h4>
             <ul>
-                <li><a href="{{ "/" | absURL }}">Trang chủ</a></li>
-                <li><a href="{{ "/posts" | absURL }}">Bài viết</a></li>
-                <li><a href="{{ "/about" | absURL }}">Giới thiệu</a></li>
+                <li><a href="{{ "" | relURL }}" class="nav-link">Trang Chủ</a></li>
+                <li><a href="{{ "posts" | relURL }}">Bài viết</a></li>
+                <li><a href="{{ "about" | relURL }}">Giới thiệu</a></li>
             </ul>
         </div>
         <div class="footer-contact">
@@ -325,7 +404,7 @@
         </div>
     </div>
     <div class="footer-bottom">
-        <p>© 2025 Huỳnh Minh Phú - Đồ án Lập trình mạng - Powered by Hugo & PaperMod</p>
+        <p>© 2025 Huỳnh Minh Phú </p>
     </div>
 </footer>
 

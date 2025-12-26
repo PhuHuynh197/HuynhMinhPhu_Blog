@@ -1,6 +1,6 @@
 ---
 title: "Đọc và ghi file nhị phân trong Java"
-date: 2025-12-24T08:45:00+07:00
+date: 2025-11-22T08:45:00+07:00
 draft: false
 tags: ["Java", "Binary", "IO"]
 ---

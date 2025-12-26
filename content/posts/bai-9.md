@@ -1,6 +1,6 @@
 ---
 title: "Truyền file giữa Client và Server trong Java"
-date: 2025-12-24T09:20:00+07:00
+date: 2025-10-24T09:20:00+07:00
 draft: false
 tags: ["Java", "Socket", "File"]
 ---

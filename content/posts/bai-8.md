@@ -1,6 +1,6 @@
 ---
 title: "Lập trình UDP với Datagram trong Java"
-date: 2025-12-24T10:00:00+07:00
+date: 2025-07-19T10:00:00+07:00
 draft: false
 tags: ["Java", "Network", "UDP"]
 ---

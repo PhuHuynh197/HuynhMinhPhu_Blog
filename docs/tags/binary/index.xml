@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Binary on Huỳnh Minh Phú</title>
-    <link>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/tags/binary/</link>
+    <link>http://localhost:1313/HuynhMinhPhu_Blog/tags/binary/</link>
     <description>Recent content in Binary on Huỳnh Minh Phú</description>
     <generator>Hugo -- 0.153.2</generator>
     <language>vi</language>
-    <lastBuildDate>Wed, 24 Dec 2025 08:45:00 +0700</lastBuildDate>
-    <atom:link href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/tags/binary/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 22 Nov 2025 08:45:00 +0700</lastBuildDate>
+    <atom:link href="http://localhost:1313/HuynhMinhPhu_Blog/tags/binary/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Đọc và ghi file nhị phân trong Java</title>
-      <link>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-4/</link>
-      <pubDate>Wed, 24 Dec 2025 08:45:00 +0700</pubDate>
-      <guid>https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-4/</guid>
+      <link>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-4/</link>
+      <pubDate>Sat, 22 Nov 2025 08:45:00 +0700</pubDate>
+      <guid>http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-4/</guid>
       <description>&lt;p&gt;Ngoài file văn bản, Java còn hỗ trợ làm việc với file nhị phân.
 File nhị phân thường được dùng để lưu dữ liệu dạng số hoặc dữ liệu có cấu trúc,
 giúp việc lưu trữ và truyền dữ liệu chính xác hơn.&lt;/p&gt;

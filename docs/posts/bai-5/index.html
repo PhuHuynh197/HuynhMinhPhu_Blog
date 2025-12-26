@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto" data-theme="light">
 
-<head><meta charset="utf-8">
+<head><script src="/HuynhMinhPhu_Blog/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=HuynhMinhPhu_Blog/livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="noindex, nofollow">
 <title>Lập trình Single Thread trong Java | Huỳnh Minh Phú</title>
 <meta name="keywords" content="Java, Thread">
 <meta name="description" content="Trong lập trình Java, thread (luồng) cho phép chương trình thực thi
@@ -19,16 +19,16 @@ Thread là một luồng thực thi độc lập trong chương trình.
 Mỗi chương trình Java khi chạy đều có ít nhất một thread,
 được gọi là main thread.">
 <meta name="author" content="">
-<link rel="canonical" href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-5/">
+<link rel="canonical" href="http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-5/">
 <link crossorigin="anonymous" href="/HuynhMinhPhu_Blog/assets/css/stylesheet.fd5566c526ae48aadabd950798a2dc3568536401560eae5caac3765a42a9e7b5.css" integrity="sha256-/VVmxSauSKravZUHmKLcNWhTZAFWDq5cqsN2WkKp57U=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/apple-touch-icon.png">
-<link rel="mask-icon" href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/safari-pinned-tab.svg">
+<link rel="icon" href="http://localhost:1313/HuynhMinhPhu_Blog/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/HuynhMinhPhu_Blog/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/HuynhMinhPhu_Blog/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/HuynhMinhPhu_Blog/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/HuynhMinhPhu_Blog/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-5/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/HuynhMinhPhu_Blog/posts/bai-5/">
 <noscript>
     <style>
         #theme-toggle,
@@ -43,89 +43,13 @@ Mỗi chương trình Java khi chạy đều có ít nhất một thread,
         document.querySelector("html").dataset.theme = 'dark';
     }
 
-</script><meta property="og:url" content="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-5/">
-  <meta property="og:site_name" content="Huỳnh Minh Phú">
-  <meta property="og:title" content="Lập trình Single Thread trong Java">
-  <meta property="og:description" content="Trong lập trình Java, thread (luồng) cho phép chương trình thực thi các công việc một cách độc lập với luồng chính. Thread là kiến thức quan trọng trong lập trình mạng, vì các chương trình client–server thường phải xử lý nhiều tác vụ khác nhau.
-Trước khi tìm hiểu về multi thread, cần nắm vững khái niệm và cách sử dụng single thread trong Java.
-1. Khái niệm Thread trong Java Thread là một luồng thực thi độc lập trong chương trình. Mỗi chương trình Java khi chạy đều có ít nhất một thread, được gọi là main thread.">
-  <meta property="og:locale" content="vi">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-12-24T09:00:00+07:00">
-    <meta property="article:modified_time" content="2025-12-24T09:00:00+07:00">
-    <meta property="article:tag" content="Java">
-    <meta property="article:tag" content="Thread">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Lập trình Single Thread trong Java">
-<meta name="twitter:description" content="Trong lập trình Java, thread (luồng) cho phép chương trình thực thi
-các công việc một cách độc lập với luồng chính.
-Thread là kiến thức quan trọng trong lập trình mạng, vì các chương trình
-client–server thường phải xử lý nhiều tác vụ khác nhau.
-Trước khi tìm hiểu về multi thread, cần nắm vững khái niệm và cách sử dụng
-single thread trong Java.
-
-1. Khái niệm Thread trong Java
-Thread là một luồng thực thi độc lập trong chương trình.
-Mỗi chương trình Java khi chạy đều có ít nhất một thread,
-được gọi là main thread.">
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "Lập trình Single Thread trong Java",
-      "item": "https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-5/"
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Lập trình Single Thread trong Java",
-  "name": "Lập trình Single Thread trong Java",
-  "description": "Trong lập trình Java, thread (luồng) cho phép chương trình thực thi các công việc một cách độc lập với luồng chính. Thread là kiến thức quan trọng trong lập trình mạng, vì các chương trình client–server thường phải xử lý nhiều tác vụ khác nhau.\nTrước khi tìm hiểu về multi thread, cần nắm vững khái niệm và cách sử dụng single thread trong Java.\n1. Khái niệm Thread trong Java Thread là một luồng thực thi độc lập trong chương trình. Mỗi chương trình Java khi chạy đều có ít nhất một thread, được gọi là main thread.\n",
-  "keywords": [
-    "Java", "Thread"
-  ],
-  "articleBody": "Trong lập trình Java, thread (luồng) cho phép chương trình thực thi các công việc một cách độc lập với luồng chính. Thread là kiến thức quan trọng trong lập trình mạng, vì các chương trình client–server thường phải xử lý nhiều tác vụ khác nhau.\nTrước khi tìm hiểu về multi thread, cần nắm vững khái niệm và cách sử dụng single thread trong Java.\n1. Khái niệm Thread trong Java Thread là một luồng thực thi độc lập trong chương trình. Mỗi chương trình Java khi chạy đều có ít nhất một thread, được gọi là main thread.\nJava cho phép tạo thread mới bằng cách:\nKế thừa lớp Thread Ghi đè phương thức run() 2. Tạo Single Thread bằng cách kế thừa Thread Cách đơn giản nhất để tạo thread là kế thừa lớp Thread và ghi đè phương thức run().\nVí dụ Single Thread public class SingleThreadDemo extends Thread { public void run() { for (int i = 1; i \u003c= 5; i++) { System.out.println(\"Thread dang chay: \" + i); } } public static void main(String[] args) { SingleThreadDemo t = new SingleThreadDemo(); t.start(); } } 3. Giải thích chương trình extends Thread Cho phép lớp kế thừa khả năng tạo luồng.\nrun() Chứa đ`oạn code sẽ được thực thi khi thread chạy.\nstart() Dùng để khởi động thread, Java sẽ tự động gọi phương thức run().\nLưu ý: Không gọi trực tiếp run() vì như vậy chương trình sẽ chạy như một phương thức bình thường, không tạo thread mới.\n4. Ý nghĩa của Single Thread Single thread giúp:\nHiểu cách Java quản lý luồng\nLàm quen với cơ chế chạy song song\nChuẩn bị nền tảng cho multi thread\nTrong các bài thực hành lập trình mạng, thread thường được dùng để xử lý các tác vụ nền hoặc các kết nối riêng biệt.\n",
-  "wordCount" : "310",
-  "inLanguage": "en",
-  "datePublished": "2025-12-24T09:00:00+07:00",
-  "dateModified": "2025-12-24T09:00:00+07:00",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts/bai-5/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Huỳnh Minh Phú",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/favicon.ico"
-    }
-  }
-}
 </script>
 </head>
 <body id="top">
     <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/" accesskey="h" title="Huỳnh Minh Phú (Alt + H)">Huỳnh Minh Phú</a>
+            <a href="http://localhost:1313/HuynhMinhPhu_Blog/" accesskey="h" title="Huỳnh Minh Phú (Alt + H)">Huỳnh Minh Phú</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -151,28 +75,34 @@ Mỗi chương trình Java khi chạy đều có ít nhất một thread,
         </div>
         <ul id="menu">
             <li>
-                <a href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/" title="Trang Chủ">
+                <a href="http://localhost:1313/HuynhMinhPhu_Blog/" title="Trang Chủ">
                     <span>Trang Chủ</span>
                 </a>
             </li>
             <li>
-                <a href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts" title="Bài Viết">
+                <a href="http://localhost:1313/HuynhMinhPhu_Blog/posts" title="Bài Viết">
                     <span>Bài Viết</span>
                 </a>
             </li>
             <li>
-                <a href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/about" title="Giới Thiệu">
+                <a href="http://localhost:1313/HuynhMinhPhu_Blog/about" title="Giới Thiệu">
                     <span>Giới Thiệu</span>
                 </a>
             </li>
             <li>
-                <a href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts" title="Liên Hệ">
+                <a href="http://localhost:1313/HuynhMinhPhu_Blog/contact" title="Liên Hệ">
                     <span>Liên Hệ</span>
                 </a>
             </li>
             <li>
-                <a href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/posts" title="CV">
-                    <span>CV</span>
+                <a href="https://drive.google.com/file/d/1RgnPTwcMSXdgxbAq8_djPUjEExtqdqtP/view?usp=drive_link" title="CV">
+                    <span>CV</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
                 </a>
             </li>
         </ul>
@@ -183,14 +113,14 @@ Mỗi chương trình Java khi chạy đều có ít nhất một thread,
 <header class="main-header">
     <div class="header-container">
         <a href="/HuynhMinhPhu_Blog/" class="logo">
-            <span class="logo-icon">🚀</span> PHU.<span>DEV</span>
+            <span class="logo-icon"></span> PHU.<span>DEV</span>
         </a>
         <nav class="nav-menu">
             <a href="/HuynhMinhPhu_Blog/" class="nav-link">Trang Chủ</a>
             <a href="/HuynhMinhPhu_Blog/posts" class="nav-link">Bài Viết</a>
             <a href="/HuynhMinhPhu_Blog/about" class="nav-link">Giới Thiệu</a>
-            <a href="/HuynhMinhPhu_Blog/posts" class="nav-link">Liên Hệ</a>
-            <a href="/HuynhMinhPhu_Blog/posts" class="nav-link">CV</a>
+            <a href="/HuynhMinhPhu_Blog/contact" class="nav-link active">Liên Hệ</a>
+            <a href="https://drive.google.com/file/d/1RgnPTwcMSXdgxbAq8_djPUjEExtqdqtP/view?usp=drive_link" class="nav-link">CV</a>
         </nav>
         <div class="header-cta">
             <a href="https://github.com/PhuHuynh197" target="_blank" class="git-btn">GitHub</a>
@@ -261,7 +191,7 @@ Mỗi chương trình Java khi chạy đều có ít nhất một thread,
         <span class="post-tag">Java</span>
         <h1 class="post-title">Lập trình Single Thread trong Java</h1>
         <div class="post-meta">
-            <span>📅 24/12/2025</span> • 
+            <span>📅 11/10/2025</span> • 
             <span>⏱️ 2 phút đọc</span>
         </div>
     </header>
@@ -347,19 +277,28 @@ sẽ chạy như một phương thức bình thường, không tạo thread mớ
     <div class="footer-container">
         <div class="footer-brand">
             <h3 class="footer-logo">Huỳnh Minh <span>Phú</span></h3>
-            <p>Chia sẻ kiến thức về lập trình Java và JavaScript. Đồ án môn Lập trình mạng - HUTECH.</p>
+            <p>Chia sẻ kiến thức về lập trình Java và JavaScript. Nơi học hỏi và phát triển kỹ năng lập trình mạng cùng cộng đồng sinh viên HUTECH.</p>
+        </div>
+        <div class="footer-links">
+            <h4>Liên kết nhanh</h4>
+            <ul>
+                <li><a href="/HuynhMinhPhu_Blog/" class="nav-link">Trang Chủ</a></li>
+                <li><a href="/HuynhMinhPhu_Blog/posts">Bài viết</a></li>
+                <li><a href="/HuynhMinhPhu_Blog/about">Giới thiệu</a></li>
+            </ul>
         </div>
         <div class="footer-contact">
-            <h4 style="color:#fff; margin-bottom:20px; font-weight:800;">Liên hệ</h4>
-            <p>📧 huynhminhphu197@gmail.com</p>
-            <p>📍 TP. Hồ Chí Minh, Việt Nam</p>
-            <div style="margin-top:15px;">
-                <a href="https://github.com/PhuHuynh197" style="color:#fff; text-decoration:none; background:#333; padding:8px 15px; border-radius:8px; font-size:0.8rem; font-weight:700;">GitHub</a>
+            <h4>Thông tin liên hệ</h4>
+            <div class="contact-item">📧 huynhminhphu197@gmail.com</div>
+            <div class="contact-item">📍 TP. Hồ Chí Minh, Việt Nam</div>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/huynhphu197" class="social-link fb">Facebook</a>
+                <a href="https://github.com/PhuHuynh197" class="social-link gh">GitHub</a>
             </div>
         </div>
     </div>
     <div class="footer-bottom">
-        <p>© 2025 Huỳnh Minh Phú - Đồ án Lập trình mạng - Powered by Hugo</p>
+        <p>© 2025 Huỳnh Minh Phú </p>
     </div>
 </footer>
 
@@ -367,7 +306,7 @@ sẽ chạy như một phương thức bình thường, không tạo thread mớ
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="https://PhuHuynh197.github.io/HuynhMinhPhu_Blog/">Huỳnh Minh Phú</a></span> · 
+        <span>&copy; 2025 <a href="http://localhost:1313/HuynhMinhPhu_Blog/">Huỳnh Minh Phú</a></span> · 
 
     <span>
         Powered by

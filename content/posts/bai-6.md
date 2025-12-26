@@ -1,6 +1,6 @@
 ---
 title: "Lập trình Multi Thread trong Java"
-date: 2025-12-24T09:15:00+07:00
+date: 2025-11-23T09:15:00+07:00
 draft: false
 tags: ["Java", "Multithread"]
 ---
