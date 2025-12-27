@@ -136,7 +136,7 @@
 
         .posts-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); 
+            grid-template-columns: repeat(3, 1fr); 
             gap: 40px;
             margin-bottom: 80px;
         }
@@ -280,13 +280,13 @@
         </div>
 
         <div class="posts-grid">
-            {{ range first 4 (where .Site.RegularPages "Type" "posts") }}
+            {{ range first 3 (where .Site.RegularPages "Type" "posts") }}
             <a href="{{ .Permalink }}" class="post-card">
                 <div class="post-meta">
                     <span class="post-tag">
                         {{ if .Params.tags }}{{ index .Params.tags 0 }}{{ else }}Tech{{ end }}
                     </span>
-                    <span class="post-date">📅 {{ .Date.Format "02/01/2006" }}</span>
+                    <span class="post-date"> {{ .Date.Format "02/01/2006" }}</span>
                 </div>
 
                 <div class="post-title">{{ .Title }}</div>
